@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 protocol LoginViewProtocol: NSObject {
     func presentError(with title: String, text: String)
+    func showLoader()
+    func dismissLoader()
 }
 
 final class LoginViewController: UIViewController {
@@ -42,7 +45,15 @@ final class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: LoginViewProtocol { }
+extension LoginViewController: LoginViewProtocol {
+    func showLoader() {
+        SVProgressHUD.show()
+    }
+
+    func dismissLoader() {
+        SVProgressHUD.dismiss()
+    }
+}
 
 extension LoginViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -27,7 +27,9 @@ final class LoginPresenter {
     }
 
     private func fetchData(with username: String) {
+        view?.showLoader()
         networkProvider.getUserData(for: username) { [weak self] result in
+            defer { self?.view?.dismissLoader() }
             guard let self = self else { return }
 
             switch result {

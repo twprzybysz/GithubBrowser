@@ -10,7 +10,11 @@ import UIKit
 
 final class AppCoordinator: BaseCoordinator {
 
-    private var window = UIWindow()
+    private var window: UIWindow
+
+    init(window: UIWindow) {
+        self.window = window
+    }
 
     override func start() {
         window.rootViewController = navigationController

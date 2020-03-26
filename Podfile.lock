@@ -8,6 +8,7 @@ PODS:
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
   - SnapKit (5.0.1)
+  - SVProgressHUD (2.2.5)
   - Swinject (2.7.1)
   - SwinjectAutoregistration (2.7.0):
     - Swinject (~> 2.7)
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - Kingfisher
   - R.swift (~> 5.0)
   - SnapKit (~> 5.0)
+  - SVProgressHUD
   - Swinject
   - SwinjectAutoregistration
 
@@ -28,6 +30,7 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - SnapKit
+    - SVProgressHUD
     - Swinject
     - SwinjectAutoregistration
 
@@ -42,9 +45,10 @@ SPEC CHECKSUMS:
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectAutoregistration: 330f5012642a8b5c89a8a4adb0c5e52df07382c0
 
-PODFILE CHECKSUM: f9d9ed212fbaa191ff1c84fc7c8abaedacd292be
+PODFILE CHECKSUM: c562fa66448f3b706c4a12996d5bee613c84a2e6
 
 COCOAPODS: 1.8.4

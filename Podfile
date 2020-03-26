@@ -14,7 +14,7 @@ def libraries
   pod 'SwinjectAutoregistration'
   pod 'Alamofire'
   pod 'Kingfisher'
-
+  pod 'SVProgressHUD'
   pod 'R.swift', '~> 5.0'
 end
 
