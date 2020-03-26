@@ -18,7 +18,12 @@ protocol CoordinatorProtocol: AnyObject {
 }
 
 class BaseCoordinator: CoordinatorProtocol {
-    var navigationController: UINavigationController = UINavigationController()
+    var navigationController: UINavigationController = {
+        let navigationController = UINavigationController()
+        navigationController.navigationBar.tintColor = .black
+
+        return navigationController
+    }()
     var parentCoordinator: CoordinatorProtocol?
 
     private var childCoordinators: [CoordinatorProtocol] = []

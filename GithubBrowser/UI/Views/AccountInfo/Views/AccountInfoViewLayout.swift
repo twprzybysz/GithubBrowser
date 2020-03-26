@@ -10,6 +10,9 @@ import SnapKit
 
 final class AccountInfoViewLayout {
     let view: UIView
+    let scrollView = UIScrollView()
+    let itemStackView = UIStackView()
+    let accountImageView = UIImageView(image: R.image.githubLogo())
 
     init(view: UIView) {
         self.view = view
@@ -18,5 +21,28 @@ final class AccountInfoViewLayout {
 
     private func setup() {
         view.setupBackground()
+        setupScrollView()
+        setupItemStackView()
+        setupAccountImageView()
+    }
+
+    private func setupScrollView() {
+        view.addSubview(scrollView)
+
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+
+    private func setupItemStackView() {
+        scrollView.addSubview(itemStackView)
+
+        itemStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+
+    private func setupAccountImageView() {
+        itemStackView.addArrangedSubview(accountImageView)
     }
 }

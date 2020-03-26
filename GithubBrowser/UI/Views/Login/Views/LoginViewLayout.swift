@@ -16,6 +16,7 @@ final class LoginViewLayout {
     let view: UIView
     let itemStackView = UIStackView()
     let imageLogo = UIImageView(image: R.image.githubLogo())
+    let loginLabel = UILabel()
     let loginTextField = TextFieldWithPadding()
     let loginButton = UIButton(type: .system)
 
@@ -28,6 +29,7 @@ final class LoginViewLayout {
         view.setupBackground()
         setupItemStackView()
         setupImageLogo()
+        setupLoginLabel()
         setupLoginTextField()
         setupLoginButton()
     }
@@ -53,6 +55,13 @@ final class LoginViewLayout {
         }
     }
 
+    private func setupLoginLabel() {
+        itemStackView.addArrangedSubview(loginLabel)
+
+        loginLabel.text = "Github username:"
+        loginLabel.font = .systemFont(ofSize: 12.0)
+    }
+
     private func setupLoginTextField() {
         itemStackView.addArrangedSubview(loginTextField)
 
@@ -63,6 +72,7 @@ final class LoginViewLayout {
         loginTextField.font = .systemFont(ofSize: 20)
         loginTextField.autocapitalizationType = .none
         loginTextField.padding = .init(top: 10, left: 20, bottom: 10, right: 20)
+        loginTextField.placeholder = "Enter username"
     }
 
     private func setupLoginButton() {
