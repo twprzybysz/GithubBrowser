@@ -6,18 +6,19 @@
 //  Copyright © 2020 Kodely. All rights reserved.
 //
 
-import Foundation
+import Keys
 
 extension URL {
     private enum Constants {
         static let baseUrl = "https://api.github.com/users/"
-        
     }
 
     static func buildUrl(with username: String) -> URL? {
+        let keys = GithubBrowserKeys()
+
         let parameters = [
-            "client_id": Constants.clientId,
-            "client_secret": Constants.clientSecret
+            "client_id": keys.githubClientId,
+            "client_secret": keys.githubClientSecret
             ]
             .map { "\($0.key)=\($0.value)" }
             .joined(separator: "&")
