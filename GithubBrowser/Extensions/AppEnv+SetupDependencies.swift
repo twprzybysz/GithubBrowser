@@ -20,9 +20,8 @@ extension Container {
     }
 
     private func registerCoordinators() {
-        register(UIWindow.self) { _ in UIApplication.shared.delegate!.window!! }
-        autoregister(AppCoordinator.self, initializer: AppCoordinator.init)
+        autoregister(AppCoordinator.self, argument: UIWindow.self, initializer: AppCoordinator.init)
         autoregister(LoginCoordinator.self, initializer: LoginCoordinator.init)
-        autoregister(AccountInfoCoordinator.self, initializer: AccountInfoCoordinator.init)
+        autoregister(AccountInfoCoordinator.self, argument: GithubUser.self, initializer: AccountInfoCoordinator.init)
     }
 }

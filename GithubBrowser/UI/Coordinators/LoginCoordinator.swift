@@ -16,8 +16,8 @@ final class LoginCoordinator: BaseCoordinator {
 }
 
 extension LoginCoordinator: LoginPresenterDelegate {
-    func showAccountInfo() {
-        let accountInfo = AppEnv.container.resolve(AccountInfoCoordinator.self)!
+    func showAccountInfo(for githubUser: GithubUser) {
+        let accountInfo = AppEnv.container.resolve(AccountInfoCoordinator.self, argument: githubUser)!
         accountInfo.navigationController = navigationController
         start(coordinator: accountInfo)
     }

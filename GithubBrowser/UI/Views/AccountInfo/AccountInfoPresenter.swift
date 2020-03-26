@@ -10,11 +10,23 @@ import Foundation
 
 protocol AccountInfoPresenterDelegate: AnyObject { }
 
-protocol AccountInfoPresenterProtocol: AnyObject { }
+protocol AccountInfoPresenterProtocol: AnyObject {
+    func viewDidLoad()
+}
 
 final class AccountInfoPresenter {
     weak var view: AccountInfoViewProtocol?
     weak var delegate: AccountInfoPresenterDelegate?
+
+    private let githubUser: GithubUser
+
+    init(githubUser: GithubUser) {
+        self.githubUser = githubUser
+    }
 }
 
-extension AccountInfoPresenter: AccountInfoPresenterProtocol { }
+extension AccountInfoPresenter: AccountInfoPresenterProtocol {
+    func viewDidLoad() {
+        view?.setAccountImage(url: githubUser.avatarURL)
+    }
+}

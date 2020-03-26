@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         AppEnv.container.registerDependencies()
 
-        appCoordinator = AppEnv.container.resolve(AppCoordinator.self)!
+        appCoordinator = AppEnv.container.resolve(AppCoordinator.self, argument: window!)!
         appCoordinator?.start()
 
         return true

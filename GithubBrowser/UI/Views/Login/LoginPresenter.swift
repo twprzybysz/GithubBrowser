@@ -7,7 +7,7 @@
 //
 
 protocol LoginPresenterDelegate: AnyObject {
-    func showAccountInfo()
+    func showAccountInfo(for githubUser: GithubUser)
 }
 
 protocol LoginPresenterProtocol: AnyObject {
@@ -34,7 +34,7 @@ final class LoginPresenter {
 
             switch result {
             case let .success(githubUser):
-                self.delegate?.showAccountInfo()
+                self.delegate?.showAccountInfo(for: githubUser)
             case let .failure(error):
                 self.view?.presentError(with: "Error", text: error.localizedDescription)
             }

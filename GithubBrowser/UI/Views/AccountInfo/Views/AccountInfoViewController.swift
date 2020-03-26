@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Kingfisher
 
-protocol AccountInfoViewProtocol: NSObject { }
+protocol AccountInfoViewProtocol: NSObject {
+    func setAccountImage(url: URL?)
+}
 
 final class AccountInfoViewController: UIViewController {
     private let presenter: AccountInfoPresenterProtocol
@@ -29,7 +32,13 @@ final class AccountInfoViewController: UIViewController {
 
         layout = AccountInfoViewLayout(view: view)
         title = "Account info"
+
+        presenter.viewDidLoad()
     }
 }
 
-extension AccountInfoViewController: AccountInfoViewProtocol { }
+extension AccountInfoViewController: AccountInfoViewProtocol {
+    func setAccountImage(url: URL?) {
+        layout.accountImageView.kf.setImage(with: url)
+    }
+}

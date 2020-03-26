@@ -8,7 +8,12 @@
 
 final class AccountInfoCoordinator: BaseCoordinator {
 
-    private lazy var module = AppEnv.builders.accountInfo.buildModule()
+    private lazy var module = AppEnv.builders.accountInfo.buildModule(githubUser: githubUser)
+    private let githubUser: GithubUser
+
+    init(githubUser: GithubUser) {
+        self.githubUser = githubUser
+    }
 
     override func start() {
         navigationController.pushViewController(module, animated: true)

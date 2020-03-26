@@ -12,7 +12,7 @@ struct GithubUser: Decodable {
     enum CodingKeys: String, CodingKey {
         case login, id
         case nodeID = "node_id"
-        case avatarURL = "avatar_url"
+        case rawAvatarURL = "avatar_url"
         case gravatarID = "gravatar_id"
         case url
         case htmlURL = "html_url"
@@ -37,7 +37,7 @@ struct GithubUser: Decodable {
     let login: String?
     let id: Int?
     let nodeID: String?
-    let avatarURL: String?
+    let rawAvatarURL: String?
     let gravatarID: String?
     let url, htmlURL, followersURL: String?
     let followingURL, gistsURL, starredURL: String?
@@ -52,6 +52,10 @@ struct GithubUser: Decodable {
     let bio: String?
     let publicRepos, publicGists, followers, following: Int?
     let createdAt, updatedAt: Date?
+
+    var avatarURL: URL? {
+        URL(string: rawAvatarURL ?? "")
+    }
 
     var isValid: Bool { id != nil }
 }
