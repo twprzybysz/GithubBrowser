@@ -13,16 +13,36 @@ final class LoginViewLayout {
         static let logoSize = CGSize(width: 300, height: 200)
     }
 
+    enum Style {
+        case normal
+        case invalid
+
+        var mainColor: UIColor {
+            switch self {
+            case .normal: return .black
+            case .invalid: return .red
+            }
+        }
+    }
+
     let view: UIView
     let itemStackView = UIStackView()
     let imageLogo = UIImageView(image: R.image.githubLogo())
     let loginLabel = UILabel()
     let loginTextField = TextFieldWithPadding()
+    let errorLabel = UILabel()
     let loginButton = UIButton(type: .system)
 
     init(view: UIView) {
         self.view = view
         setup()
+    }
+
+    func setStyle(style: Style, withError text: String = "") {
+        loginLabel.textColor = style.mainColor
+        loginTextField.layer.borderColor = style.mainColor.cgColor
+        errorLabel.text = text
+        errorLabel.textColor = style.mainColor
     }
 
     private func setup() {
@@ -31,7 +51,10 @@ final class LoginViewLayout {
         setupImageLogo()
         setupLoginLabel()
         setupLoginTextField()
+        setupErrorLabel()
         setupLoginButton()
+
+        setStyle(style: .normal)
     }
 
     private func setupItemStackView() {
@@ -73,13 +96,20 @@ final class LoginViewLayout {
         loginTextField.autocapitalizationType = .none
         loginTextField.padding = .init(top: 10, left: 20, bottom: 10, right: 20)
         loginTextField.placeholder = "Enter username"
+        loginTextField.clearsOnBeginEditing = true
+    }
+
+    private func setupErrorLabel() {
+        itemStackView.addArrangedSubview(errorLabel)
+
+        errorLabel.font = .systemFont(ofSize: 12.0)
     }
 
     private func setupLoginButton() {
         itemStackView.addArrangedSubview(loginButton)
 
         //TODO: change name
-        loginButton.setTitle("Log in", for: .normal)
+        loginButton.setTitle("Check user name", for: .normal)
         loginButton.setTitleColor(.black, for: .normal)
         loginButton.titleLabel?.font = .systemFont(ofSize: 20.0)
 

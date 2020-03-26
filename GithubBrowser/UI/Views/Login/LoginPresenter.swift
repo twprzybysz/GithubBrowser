@@ -34,6 +34,11 @@ final class LoginPresenter {
 
             switch result {
             case let .success(githubUser):
+                guard githubUser.isValid else {
+                    self.view?.highlightFieldWithError(text: "User is invalid")
+                    return
+                }
+
                 self.delegate?.showAccountInfo(for: githubUser)
             case let .failure(error):
                 self.view?.presentError(with: "Error", text: error.localizedDescription)

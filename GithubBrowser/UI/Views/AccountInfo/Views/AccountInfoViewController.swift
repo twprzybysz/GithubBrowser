@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 protocol AccountInfoViewProtocol: NSObject {
-    func setAccountImage(url: URL?)
+    func configureView(for githubUser: GithubUser)
 }
 
 final class AccountInfoViewController: UIViewController {
@@ -38,7 +38,8 @@ final class AccountInfoViewController: UIViewController {
 }
 
 extension AccountInfoViewController: AccountInfoViewProtocol {
-    func setAccountImage(url: URL?) {
-        layout.accountImageView.kf.setImage(with: url)
+    func configureView(for githubUser: GithubUser) {
+        layout.configureView(for: githubUser)
+        layout.accountImageView.kf.setImage(with: githubUser.avatarURL)
     }
 }

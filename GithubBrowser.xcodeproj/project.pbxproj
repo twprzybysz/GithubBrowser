@@ -38,6 +38,7 @@
 		B9E132EA242D344E008C61BE /* String+RemovingWhitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132E9242D344E008C61BE /* String+RemovingWhitespaces.swift */; };
 		B9E132F3242D3DD5008C61BE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132F2242D3DD5008C61BE /* R.generated.swift */; };
 		B9E132F6242D40E3008C61BE /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132F5242D40E3008C61BE /* TextFieldWithPadding.swift */; };
+		B9E132F8242D5BF7008C61BE /* DateFormatter+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132F7242D5BF7008C61BE /* DateFormatter+Format.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		B9E132E9242D344E008C61BE /* String+RemovingWhitespaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+RemovingWhitespaces.swift"; sourceTree = "<group>"; };
 		B9E132F2242D3DD5008C61BE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		B9E132F5242D40E3008C61BE /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
+		B9E132F7242D5BF7008C61BE /* DateFormatter+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Format.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				B9E132DA242D0C1A008C61BE /* UIViewController+PresentError.swift */,
 				B9E132E7242D3277008C61BE /* UIView+SetupBackground.swift */,
 				B9E132E9242D344E008C61BE /* String+RemovingWhitespaces.swift */,
+				B9E132F7242D5BF7008C61BE /* DateFormatter+Format.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				B9E132D5242D0A12008C61BE /* NetworkRouter.swift in Sources */,
 				B9E132D7242D0A68008C61BE /* NetworkError.swift in Sources */,
 				B9E1329A242CF4BD008C61BE /* AppDelegate.swift in Sources */,
+				B9E132F8242D5BF7008C61BE /* DateFormatter+Format.swift in Sources */,
 				B9E132CB242D0168008C61BE /* GithubUserRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,6 +27,6 @@ final class AccountInfoPresenter {
 
 extension AccountInfoPresenter: AccountInfoPresenterProtocol {
     func viewDidLoad() {
-        view?.setAccountImage(url: githubUser.avatarURL)
+        view?.configureView(for: githubUser)
     }
 }

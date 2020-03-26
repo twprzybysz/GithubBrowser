@@ -13,6 +13,8 @@ protocol LoginViewProtocol: NSObject {
     func presentError(with title: String, text: String)
     func showLoader()
     func dismissLoader()
+    func restoreFieldStyle()
+    func highlightFieldWithError(text: String)
 }
 
 final class LoginViewController: UIViewController {
@@ -42,6 +44,8 @@ final class LoginViewController: UIViewController {
 
     @objc private func didTapLogIn() {
         presenter.loginDidTap()
+
+        view.endEditing(true)
     }
 }
 
@@ -52,6 +56,14 @@ extension LoginViewController: LoginViewProtocol {
 
     func dismissLoader() {
         SVProgressHUD.dismiss()
+    }
+
+    func restoreFieldStyle() {
+        layout.setStyle(style: .normal)
+    }
+
+    func highlightFieldWithError(text: String) {
+        layout.setStyle(style: .invalid, withError: text)
     }
 }
 
@@ -65,6 +77,14 @@ extension LoginViewController: UITextFieldDelegate {
         presenter.didChangeUsername(newText)
         textField.text = newText
 
+        restoreFieldStyle()
+
         return false
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+
+        return true
     }
 }
