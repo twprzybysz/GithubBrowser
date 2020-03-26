@@ -7,13 +7,21 @@ plugin 'cocoapods-keys', {
     "GithubClientSecret"
   ]}
 
-target 'GithubBrowser' do
-  inhibit_all_warnings!
-  use_frameworks!
 
+def libraries
   pod 'SnapKit', '~> 5.0'
   pod 'Swinject'
   pod 'SwinjectAutoregistration'
   pod 'Alamofire'
+  pod 'Kingfisher'
+
+  pod 'R.swift', '~> 5.0'
+end
+
+target 'GithubBrowser' do
+  inhibit_all_warnings!
+  use_frameworks!
+
+  libraries
 end
 
