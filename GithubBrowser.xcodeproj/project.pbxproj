@@ -36,6 +36,8 @@
 		B9E132E6242D2D7C008C61BE /* AccountInfoViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132E5242D2D7B008C61BE /* AccountInfoViewLayout.swift */; };
 		B9E132E8242D3277008C61BE /* UIView+SetupBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132E7242D3277008C61BE /* UIView+SetupBackground.swift */; };
 		B9E132EA242D344E008C61BE /* String+RemovingWhitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132E9242D344E008C61BE /* String+RemovingWhitespaces.swift */; };
+		B9E132F3242D3DD5008C61BE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132F2242D3DD5008C61BE /* R.generated.swift */; };
+		B9E132F6242D40E3008C61BE /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132F5242D40E3008C61BE /* TextFieldWithPadding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		B9E132E5242D2D7B008C61BE /* AccountInfoViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewLayout.swift; sourceTree = "<group>"; };
 		B9E132E7242D3277008C61BE /* UIView+SetupBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SetupBackground.swift"; sourceTree = "<group>"; };
 		B9E132E9242D344E008C61BE /* String+RemovingWhitespaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+RemovingWhitespaces.swift"; sourceTree = "<group>"; };
+		B9E132F2242D3DD5008C61BE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		B9E132F5242D40E3008C61BE /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 				B9E132D0242D0798008C61BE /* Network */,
 				B9E132AE242CF5E7008C61BE /* UI */,
 				B9E132EB242D3566008C61BE /* Services */,
+				B9E132F1242D3DC8008C61BE /* Generated */,
 				B9E132BB242CF6F3008C61BE /* Extensions */,
 				B9E132A2242CF4BE008C61BE /* Assets.xcassets */,
 				B9E132A4242CF4BE008C61BE /* LaunchScreen.storyboard */,
@@ -150,6 +155,7 @@
 		B9E132AE242CF5E7008C61BE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B9E132F4242D40B4008C61BE /* Components */,
 				B9E132AF242CF5EF008C61BE /* Coordinators */,
 				B9E132B0242CF5FD008C61BE /* Views */,
 			);
@@ -253,6 +259,22 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		B9E132F1242D3DC8008C61BE /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				B9E132F2242D3DD5008C61BE /* R.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		B9E132F4242D40B4008C61BE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B9E132F5242D40E3008C61BE /* TextFieldWithPadding.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -261,6 +283,7 @@
 			buildConfigurationList = B9E132AA242CF4BE008C61BE /* Build configuration list for PBXNativeTarget "GithubBrowser" */;
 			buildPhases = (
 				381F2BA6AFF2C5C9148850DB /* [CP] Check Pods Manifest.lock */,
+				B9E132F0242D3D22008C61BE /* Script for Rswift */,
 				B9E13292242CF4BD008C61BE /* Sources */,
 				B9E13293242CF4BD008C61BE /* Frameworks */,
 				B9E13294242CF4BD008C61BE /* Resources */,
@@ -360,6 +383,26 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GithubBrowser/Pods-GithubBrowser-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B9E132F0242D3D22008C61BE /* Script for Rswift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "Script for Rswift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -387,6 +430,8 @@
 				B9E132C4242CF918008C61BE /* LoginPresenter.swift in Sources */,
 				B9E132E6242D2D7C008C61BE /* AccountInfoViewLayout.swift in Sources */,
 				B9E132B4242CF660008C61BE /* AppCoordinator.swift in Sources */,
+				B9E132F3242D3DD5008C61BE /* R.generated.swift in Sources */,
+				B9E132F6242D40E3008C61BE /* TextFieldWithPadding.swift in Sources */,
 				B9E132BA242CF6D7008C61BE /* AccountInfoCoordinator.swift in Sources */,
 				B9E132B2242CF61D008C61BE /* AppEnv.swift in Sources */,
 				B9E132D5242D0A12008C61BE /* NetworkRouter.swift in Sources */,
