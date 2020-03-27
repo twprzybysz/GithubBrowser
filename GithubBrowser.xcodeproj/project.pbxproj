@@ -10,6 +10,7 @@
 		54816C4F23F1E04125ECD289 /* Pods_GithubBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2024E7ABDA10DBB2686301 /* Pods_GithubBrowser.framework */; };
 		B91F0F35242E4CDB00B75190 /* AccountInfoViewControllerSnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F34242E4CDB00B75190 /* AccountInfoViewControllerSnapshotSpec.swift */; };
 		B91F0F38242E54A100B75190 /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F37242E54A100B75190 /* GithubUser.swift */; };
+		B91F0F3A242E856100B75190 /* LabelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F39242E856100B75190 /* LabelBuilder.swift */; };
 		B9E1329A242CF4BD008C61BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E13299242CF4BD008C61BE /* AppDelegate.swift */; };
 		B9E132A3242CF4BE008C61BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E132A2242CF4BE008C61BE /* Assets.xcassets */; };
 		B9E132A6242CF4BE008C61BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E132A4242CF4BE008C61BE /* LaunchScreen.storyboard */; };
@@ -70,6 +71,7 @@
 		899C72EFE3D5A5F479711774 /* Pods_GithubBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B91F0F34242E4CDB00B75190 /* AccountInfoViewControllerSnapshotSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewControllerSnapshotSpec.swift; sourceTree = "<group>"; };
 		B91F0F37242E54A100B75190 /* GithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
+		B91F0F39242E856100B75190 /* LabelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelBuilder.swift; sourceTree = "<group>"; };
 		B9E13296242CF4BD008C61BE /* GithubBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E13299242CF4BD008C61BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E132A2242CF4BE008C61BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 			children = (
 				B9E132FA242D63B7008C61BE /* KeyboardObserver.swift */,
 				B9E13301242DDC6D008C61BE /* RHelpers.swift */,
+				B91F0F39242E856100B75190 /* LabelBuilder.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -592,7 +595,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/GithubBrowser/Generated/R.generated.swift",
+				$SRCROOT/GithubBrowser/Generated/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -645,6 +648,7 @@
 				B9E132E4242D2D49008C61BE /* AccountInfoViewController.swift in Sources */,
 				B9E132C4242CF918008C61BE /* LoginPresenter.swift in Sources */,
 				B9E132E6242D2D7C008C61BE /* AccountInfoViewLayout.swift in Sources */,
+				B91F0F3A242E856100B75190 /* LabelBuilder.swift in Sources */,
 				B9E132B4242CF660008C61BE /* AppCoordinator.swift in Sources */,
 				B9E132F6242D40E3008C61BE /* TextFieldWithPadding.swift in Sources */,
 				B9E132BA242CF6D7008C61BE /* AccountInfoCoordinator.swift in Sources */,

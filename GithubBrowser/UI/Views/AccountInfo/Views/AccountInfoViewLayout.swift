@@ -28,17 +28,24 @@ final class AccountInfoViewLayout {
     func configureView(for githubUser: GithubUser) {
         accountDataStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
-        insertLabelWith(title: L10n.accountInfoLogin(), text: "\(githubUser.login ?? Constants.empty)")
-        insertLabelWith(title: L10n.accountInfoName(), text: "\(githubUser.name ?? Constants.empty)")
-        insertLabelWith(title: L10n.accountInfoLocation(), text: "\(githubUser.location ?? Constants.empty)")
-        insertLabelWith(title: L10n.accountInfoWebsite(), text: "\(githubUser.htmlURL ?? Constants.empty)")
-        insertLabelWith(title: L10n.accountInfoCompany(), text: "\(githubUser.company ?? Constants.empty)")
-        insertLabelWith(title: L10n.accountInfoFollowers(), text: "\(githubUser.followers ?? 0)")
-        insertLabelWith(title: L10n.accountInfoFollowing(), text: "\(githubUser.following ?? 0)")
-        insertLabelWith(title: L10n.accountInfoCreationDate(), text: "\(DateFormatter.format(date: githubUser.createdAt))")
-        insertLabelWith(title: L10n.accountInfoUpdateDate(), text: " \(DateFormatter.format(date: githubUser.updatedAt))")
-        insertLabelWith(title: L10n.accountInfoPublicGists(), text: "\(githubUser.publicGists ?? 0)")
-        insertLabelWith(title: L10n.accountInfoPublicRepositories(), text: "\(githubUser.publicRepos ?? 0)")
+        #warning("TODO: text should be in prepared in presenter")
+        [
+            (title: L10n.accountInfoLogin(), text: "\(githubUser.login ?? Constants.empty)"),
+            (title: L10n.accountInfoName(), text: "\(githubUser.name ?? Constants.empty)"),
+            (title: L10n.accountInfoLocation(), text: "\(githubUser.location ?? Constants.empty)"),
+            (title: L10n.accountInfoWebsite(), text: "\(githubUser.htmlURL ?? Constants.empty)"),
+            (title: L10n.accountInfoCompany(), text: "\(githubUser.company ?? Constants.empty)"),
+            (title: L10n.accountInfoFollowers(), text: "\(githubUser.followers ?? 0)"),
+            (title: L10n.accountInfoFollowing(), text: "\(githubUser.following ?? 0)"),
+            (title: L10n.accountInfoCreationDate(), text: "\(DateFormatter.format(date: githubUser.createdAt))"),
+            (title: L10n.accountInfoUpdateDate(), text: " \(DateFormatter.format(date: githubUser.updatedAt))"),
+            (title: L10n.accountInfoPublicGists(), text: "\(githubUser.publicGists ?? 0)"),
+            (title: L10n.accountInfoPublicRepositories(), text: "\(githubUser.publicRepos ?? 0)")
+        ].forEach { item in
+            let label = LabelBuilder(title: item.title, text: item.text).build()
+            let wrappedLabel = wrapWithMarginView(textLabel: label)
+            accountDataStackView.addArrangedSubview(wrappedLabel)
+        }
     }
 
     private func setup() {
@@ -88,28 +95,15 @@ final class AccountInfoViewLayout {
         accountDataStackView.spacing = 10.0
     }
 
-    private func insertLabelWith(title: String, text: String? = nil) {
-        let itemLabel = UILabel()
-
-        let baseAttribute = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18.0)]
-        let attributedString = NSMutableAttributedString(string: title, attributes: baseAttribute)
-        if let text = text {
-            let attributedText = NSAttributedString(string: "\n" + text)
-            attributedString.append(attributedText)
-        }
-
-        itemLabel.attributedText = attributedString
-        itemLabel.numberOfLines = 0
-        itemLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
-
+    private func wrapWithMarginView(textLabel: UILabel) -> UIView {
         let labelWrapView = UIView()
-        labelWrapView.addSubview(itemLabel)
+        labelWrapView.addSubview(textLabel)
 
-        itemLabel.snp.makeConstraints { make in
+        textLabel.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(20.0)
         }
 
-        accountDataStackView.addArrangedSubview(labelWrapView)
+        return labelWrapView
     }
 }
