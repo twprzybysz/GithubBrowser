@@ -42,6 +42,8 @@ final class LoginViewLayout {
     let loginButton = UIButton(type: .system)
 
     private var bottomConstraint: Constraint?
+    private var lastKnownStyle: Style = .normal
+    private var lastErrorText: String = ""
 
     var bottomConstraintValue: CGFloat = 0 {
         didSet {
@@ -57,11 +59,18 @@ final class LoginViewLayout {
         setup()
     }
 
+    func reloadStyle() {
+        setStyle(style: lastKnownStyle, withError: lastErrorText)
+    }
+
     func setStyle(style: Style, withError text: String = "") {
         loginLabel.textColor = style.baseColor
         loginTextField.layer.borderColor = style.baseColor?.cgColor
         errorLabel.text = text
         errorLabel.textColor = style.mainColor
+
+        lastErrorText = text
+        lastKnownStyle = style
     }
 
     private func setup() {

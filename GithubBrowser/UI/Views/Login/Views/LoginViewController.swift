@@ -54,6 +54,12 @@ final class LoginViewController: UIViewController {
 
         view.endEditing(true)
     }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        layout.reloadStyle()
+    }
 }
 
 extension LoginViewController: LoginViewProtocol {
