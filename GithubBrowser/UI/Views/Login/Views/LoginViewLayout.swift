@@ -152,7 +152,7 @@ final class LoginViewLayout {
     private func setupLoginButton() {
         itemStackView.addArrangedSubview(loginButton)
 
-        //TODO: change name
+        #warning("TODO: change name")
         loginButton.setTitle(L10n.loginButton(), for: .normal)
         loginButton.setTitleColor(Colors.text(), for: .normal)
         loginButton.titleLabel?.font = .systemFont(ofSize: 20.0)

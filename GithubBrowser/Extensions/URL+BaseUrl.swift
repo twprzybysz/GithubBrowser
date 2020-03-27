@@ -15,11 +15,10 @@ extension URL {
 
     static func buildUrl(with username: String) -> URL? {
         let keys = GithubBrowserKeys()
-
         let parameters = [
             "client_id": keys.githubClientId,
             "client_secret": keys.githubClientSecret
-            ]
+        ]
             .map { "\($0.key)=\($0.value)" }
             .joined(separator: "&")
 

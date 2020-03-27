@@ -16,6 +16,7 @@ def libraries
   pod 'Kingfisher'
   pod 'SVProgressHUD'
   pod 'R.swift', '~> 5.0'
+  pod 'SwiftLint', '~> 0.38'
 end
 
 target 'GithubBrowser' do

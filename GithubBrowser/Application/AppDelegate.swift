@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        /// This needs to be created here because its the right place to initialize window when using SVProgressHUD
+        // This needs to be created here because its the right place to initialize window when using SVProgressHUD
         window = UIWindow(frame: UIScreen.main.bounds)
 
         AppEnv.container.registerDependencies()

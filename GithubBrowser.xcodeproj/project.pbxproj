@@ -36,7 +36,6 @@
 		B9E132E6242D2D7C008C61BE /* AccountInfoViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132E5242D2D7B008C61BE /* AccountInfoViewLayout.swift */; };
 		B9E132E8242D3277008C61BE /* UIView+SetupBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132E7242D3277008C61BE /* UIView+SetupBackground.swift */; };
 		B9E132EA242D344E008C61BE /* String+RemovingWhitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132E9242D344E008C61BE /* String+RemovingWhitespaces.swift */; };
-		B9E132F3242D3DD5008C61BE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132F2242D3DD5008C61BE /* R.generated.swift */; };
 		B9E132F6242D40E3008C61BE /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132F5242D40E3008C61BE /* TextFieldWithPadding.swift */; };
 		B9E132F8242D5BF7008C61BE /* DateFormatter+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132F7242D5BF7008C61BE /* DateFormatter+Format.swift */; };
 		B9E132FB242D63B7008C61BE /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132FA242D63B7008C61BE /* KeyboardObserver.swift */; };
@@ -44,6 +43,7 @@
 		B9E13300242DDC16008C61BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9E132FF242DDC16008C61BE /* Localizable.strings */; };
 		B9E13302242DDC6D008C61BE /* RHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E13301242DDC6D008C61BE /* RHelpers.swift */; };
 		B9E13304242DEA59008C61BE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E13303242DEA59008C61BE /* Colors.xcassets */; };
+		B9E13307242DF7EF008C61BE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E13306242DF7EF008C61BE /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +80,6 @@
 		B9E132E5242D2D7B008C61BE /* AccountInfoViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewLayout.swift; sourceTree = "<group>"; };
 		B9E132E7242D3277008C61BE /* UIView+SetupBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SetupBackground.swift"; sourceTree = "<group>"; };
 		B9E132E9242D344E008C61BE /* String+RemovingWhitespaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+RemovingWhitespaces.swift"; sourceTree = "<group>"; };
-		B9E132F2242D3DD5008C61BE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		B9E132F5242D40E3008C61BE /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
 		B9E132F7242D5BF7008C61BE /* DateFormatter+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Format.swift"; sourceTree = "<group>"; };
 		B9E132FA242D63B7008C61BE /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		B9E132FF242DDC16008C61BE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B9E13301242DDC6D008C61BE /* RHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RHelpers.swift; sourceTree = "<group>"; };
 		B9E13303242DEA59008C61BE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B9E13306242DF7EF008C61BE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,7 +276,7 @@
 		B9E132F1242D3DC8008C61BE /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				B9E132F2242D3DD5008C61BE /* R.generated.swift */,
+				B9E13306242DF7EF008C61BE /* R.generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -317,6 +317,7 @@
 			buildConfigurationList = B9E132AA242CF4BE008C61BE /* Build configuration list for PBXNativeTarget "GithubBrowser" */;
 			buildPhases = (
 				381F2BA6AFF2C5C9148850DB /* [CP] Check Pods Manifest.lock */,
+				B9E13305242DF582008C61BE /* Script for SwiftLint */,
 				B9E132F0242D3D22008C61BE /* Script for Rswift */,
 				B9E13292242CF4BD008C61BE /* Sources */,
 				B9E13293242CF4BD008C61BE /* Frameworks */,
@@ -433,11 +434,29 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				$SRCROOT/GithubBrowser/Generated/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/GithubBrowser/Generated/R.generated.swift\"\n";
+		};
+		B9E13305242DF582008C61BE /* Script for SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Script for SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -469,11 +488,11 @@
 				B9E132C4242CF918008C61BE /* LoginPresenter.swift in Sources */,
 				B9E132E6242D2D7C008C61BE /* AccountInfoViewLayout.swift in Sources */,
 				B9E132B4242CF660008C61BE /* AppCoordinator.swift in Sources */,
-				B9E132F3242D3DD5008C61BE /* R.generated.swift in Sources */,
 				B9E132F6242D40E3008C61BE /* TextFieldWithPadding.swift in Sources */,
 				B9E132BA242CF6D7008C61BE /* AccountInfoCoordinator.swift in Sources */,
 				B9E132B2242CF61D008C61BE /* AppEnv.swift in Sources */,
 				B9E132D5242D0A12008C61BE /* NetworkRouter.swift in Sources */,
+				B9E13307242DF7EF008C61BE /* R.generated.swift in Sources */,
 				B9E132D7242D0A68008C61BE /* NetworkError.swift in Sources */,
 				B9E1329A242CF4BD008C61BE /* AppDelegate.swift in Sources */,
 				B9E132F8242D5BF7008C61BE /* DateFormatter+Format.swift in Sources */,

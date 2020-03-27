@@ -15,4 +15,3 @@ struct GithubUserRepository: Decodable {
     let languagesUrl: String
     let isFork: Bool
 }
-
