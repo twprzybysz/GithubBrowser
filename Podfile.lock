@@ -4,10 +4,14 @@ PODS:
   - Kingfisher (5.13.2):
     - Kingfisher/Core (= 5.13.2)
   - Kingfisher/Core (5.13.2)
+  - Nimble (8.0.5)
+  - Quick (2.2.0)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
   - SnapKit (5.0.1)
+  - SnapshotTesting (1.7.2)
+  - Sourcery (0.17.0)
   - SVProgressHUD (2.2.5)
   - SwiftLint (0.39.1)
   - Swinject (2.7.1)
@@ -18,8 +22,12 @@ DEPENDENCIES:
   - Alamofire
   - Keys (from `Pods/CocoaPodsKeys`)
   - Kingfisher
+  - Nimble (~> 8.0)
+  - Quick (~> 2.2)
   - R.swift (~> 5.0)
   - SnapKit (~> 5.0)
+  - SnapshotTesting (~> 1.6)
+  - Sourcery (~> 0.17.0)
   - SVProgressHUD
   - SwiftLint (~> 0.38)
   - Swinject
@@ -29,9 +37,13 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - Nimble
+    - Quick
     - R.swift
     - R.swift.Library
     - SnapKit
+    - SnapshotTesting
+    - Sourcery
     - SVProgressHUD
     - SwiftLint
     - Swinject
@@ -45,14 +57,18 @@ SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
   Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SnapshotTesting: 8caa6661fea7c8019d5b46de77c16bab99c36c5c
+  Sourcery: 3ed61be7c8a1218fce349266139379dba477efe0
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectAutoregistration: 330f5012642a8b5c89a8a4adb0c5e52df07382c0
 
-PODFILE CHECKSUM: 972e83d521f62d124a43a0597370d825bcd3580b
+PODFILE CHECKSUM: c3731d5b8b103c96a4617c6e7b9f088388b48bdb
 
 COCOAPODS: 1.8.4
