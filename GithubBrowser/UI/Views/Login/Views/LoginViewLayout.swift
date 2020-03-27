@@ -27,11 +27,23 @@ final class LoginViewLayout {
 
     let view: UIView
     let itemStackView = UIStackView()
+    let keyboardAreaView = UIView()
     let imageLogo = UIImageView(image: R.image.githubLogo())
     let loginLabel = UILabel()
     let loginTextField = TextFieldWithPadding()
     let errorLabel = UILabel()
     let loginButton = UIButton(type: .system)
+
+    private var bottomConstraint: Constraint?
+
+    var bottomConstraintValue: CGFloat = 0 {
+        didSet {
+            bottomConstraint?.update(inset: bottomConstraintValue)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
 
     init(view: UIView) {
         self.view = view
@@ -48,6 +60,7 @@ final class LoginViewLayout {
     private func setup() {
         view.setupBackground()
         setupItemStackView()
+        setupKeyboardAreaView()
         setupImageLogo()
         setupLoginLabel()
         setupLoginTextField()
@@ -64,7 +77,19 @@ final class LoginViewLayout {
         itemStackView.spacing = 10.0
 
         itemStackView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().priority(.low)
+        }
+    }
+
+    private func setupKeyboardAreaView() {
+        view.addSubview(keyboardAreaView)
+
+        keyboardAreaView.snp.makeConstraints { make in
+            make.top.equalTo(itemStackView.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+
+            bottomConstraint = make.bottom.equalTo(view.safeAreaLayoutGuide).constraint
         }
     }
 
@@ -112,10 +137,5 @@ final class LoginViewLayout {
         loginButton.setTitle("Check user name", for: .normal)
         loginButton.setTitleColor(.black, for: .normal)
         loginButton.titleLabel?.font = .systemFont(ofSize: 20.0)
-
-        loginButton.snp.makeConstraints { make in
-            //make.top.equalTo(loginTextField.snp.bottom).offset(20.0)
-            make.centerX.equalToSuperview()
-        }
     }
 }

@@ -27,6 +27,11 @@ final class LoginPresenter {
     }
 
     private func fetchData(with username: String) {
+        guard !userName.isEmpty else {
+            view?.highlightFieldWithError(text: "Field is empty")
+            return
+        }
+
         view?.showLoader()
         networkProvider.getUserData(for: username) { [weak self] result in
             defer { self?.view?.dismissLoader() }
@@ -39,11 +44,17 @@ final class LoginPresenter {
                     return
                 }
 
+                self.clearUserName()
                 self.delegate?.showAccountInfo(for: githubUser)
             case let .failure(error):
                 self.view?.presentError(with: "Error", text: error.localizedDescription)
             }
         }
+    }
+
+    private func clearUserName() {
+        userName = ""
+        view?.clearTextField()
     }
 }
 

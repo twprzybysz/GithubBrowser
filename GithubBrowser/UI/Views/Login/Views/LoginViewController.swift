@@ -15,12 +15,14 @@ protocol LoginViewProtocol: NSObject {
     func dismissLoader()
     func restoreFieldStyle()
     func highlightFieldWithError(text: String)
+    func clearTextField()
 }
 
 final class LoginViewController: UIViewController {
 
     private let presenter: LoginPresenterProtocol
     private var layout: LoginViewLayout!
+    private var keyboardObserver = KeyboardObserver()
 
     init(presenter: LoginPresenterProtocol) {
         self.presenter = presenter
@@ -40,6 +42,11 @@ final class LoginViewController: UIViewController {
 
         layout.loginTextField.delegate = self
         layout.loginButton.addTarget(self, action: #selector(didTapLogIn), for: .touchUpInside)
+
+        keyboardObserver.delegate = self
+        keyboardObserver.registerObserver()
+
+        view.registerKeyboardDimissOnTap()
     }
 
     @objc private func didTapLogIn() {
@@ -65,6 +72,10 @@ extension LoginViewController: LoginViewProtocol {
     func highlightFieldWithError(text: String) {
         layout.setStyle(style: .invalid, withError: text)
     }
+
+    func clearTextField() {
+        layout.loginTextField.text = ""
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {
@@ -86,5 +97,15 @@ extension LoginViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
 
         return true
+    }
+}
+
+extension LoginViewController: KeyboardObserverDelegate {
+    func keyboardWillAppear(keyboardFrame: CGRect) {
+        layout.bottomConstraintValue = keyboardFrame.height
+    }
+
+    func keyboardWillHide() {
+        layout.bottomConstraintValue = 0
     }
 }
