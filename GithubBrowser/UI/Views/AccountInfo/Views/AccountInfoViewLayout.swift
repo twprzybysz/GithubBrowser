@@ -17,7 +17,7 @@ final class AccountInfoViewLayout {
     let view: UIView
     let scrollView = UIScrollView()
     let itemStackView = UIStackView()
-    let accountImageView = UIImageView(image: R.image.githubLogo())
+    let accountImageView = UIImageView(image: R.image.blank())
     let accountDataStackView = UIStackView()
 
     init(view: UIView) {

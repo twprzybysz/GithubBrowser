@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		54816C4F23F1E04125ECD289 /* Pods_GithubBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2024E7ABDA10DBB2686301 /* Pods_GithubBrowser.framework */; };
+		B91F0F35242E4CDB00B75190 /* AccountInfoViewControllerSnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F34242E4CDB00B75190 /* AccountInfoViewControllerSnapshotSpec.swift */; };
+		B91F0F38242E54A100B75190 /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F37242E54A100B75190 /* GithubUser.swift */; };
 		B9E1329A242CF4BD008C61BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E13299242CF4BD008C61BE /* AppDelegate.swift */; };
 		B9E132A3242CF4BE008C61BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E132A2242CF4BE008C61BE /* Assets.xcassets */; };
 		B9E132A6242CF4BE008C61BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E132A4242CF4BE008C61BE /* LaunchScreen.storyboard */; };
@@ -66,6 +68,8 @@
 		3AD30D68D21EB4C4101D193F /* Pods-GithubBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubBrowser.release.xcconfig"; path = "Target Support Files/Pods-GithubBrowser/Pods-GithubBrowser.release.xcconfig"; sourceTree = "<group>"; };
 		3ED06968FFABBA37C6D813E8 /* Pods-GithubBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubBrowser.debug.xcconfig"; path = "Target Support Files/Pods-GithubBrowser/Pods-GithubBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		899C72EFE3D5A5F479711774 /* Pods_GithubBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91F0F34242E4CDB00B75190 /* AccountInfoViewControllerSnapshotSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewControllerSnapshotSpec.swift; sourceTree = "<group>"; };
+		B91F0F37242E54A100B75190 /* GithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
 		B9E13296242CF4BD008C61BE /* GithubBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E13299242CF4BD008C61BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E132A2242CF4BE008C61BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +156,14 @@
 				899C72EFE3D5A5F479711774 /* Pods_GithubBrowserTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B91F0F36242E549400B75190 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				B91F0F37242E54A100B75190 /* GithubUser.swift */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 		B9E1328D242CF4BD008C61BE = {
@@ -352,6 +364,7 @@
 				B9E13318242DFCAD008C61BE /* SnapshotTests */,
 				B9E1331E242DFF33008C61BE /* Helpers */,
 				B9E1331B242DFD86008C61BE /* Extensions */,
+				B91F0F36242E549400B75190 /* TestData */,
 				B9E13312242DFBC9008C61BE /* Info.plist */,
 			);
 			path = GithubBrowserTests;
@@ -361,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E13319242DFCD3008C61BE /* LoginViewControllerSnapshotSpec.swift */,
+				B91F0F34242E4CDB00B75190 /* AccountInfoViewControllerSnapshotSpec.swift */,
 				B9E13321242E06A6008C61BE /* CorrectSnapshottingDeviceSpec.swift */,
 			);
 			path = SnapshotTests;
@@ -649,7 +663,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9E13320242DFF52008C61BE /* SnapshotTestCases.swift in Sources */,
+				B91F0F38242E54A100B75190 /* GithubUser.swift in Sources */,
 				B9E13322242E06A6008C61BE /* CorrectSnapshottingDeviceSpec.swift in Sources */,
+				B91F0F35242E4CDB00B75190 /* AccountInfoViewControllerSnapshotSpec.swift in Sources */,
 				B9E1331D242DFE54008C61BE /* Quick+ExpectingSnapshot.swift in Sources */,
 				B9E1331A242DFCD3008C61BE /* LoginViewControllerSnapshotSpec.swift in Sources */,
 			);
