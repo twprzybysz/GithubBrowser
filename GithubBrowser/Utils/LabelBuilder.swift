@@ -10,7 +10,7 @@ import UIKit
 
 struct LabelBuilder {
     let title: String
-    let text: String?
+    let text: String
 
     func build() -> UILabel {
         let label = UILabel()
@@ -24,12 +24,15 @@ struct LabelBuilder {
 
     private func buildText() -> NSAttributedString {
         let baseAttribute = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18.0)]
-        let attributedString = NSMutableAttributedString(string: title, attributes: baseAttribute)
 
-        if let text = text {
-            let attributedText = NSAttributedString(string: "\n" + text)
-            attributedString.append(attributedText)
-        }
+        let attributedString = NSMutableAttributedString(
+            string: title,
+            attributes: baseAttribute
+        )
+
+        attributedString.append(
+            NSAttributedString(string: ["\n", text].joined())
+        )
 
         return attributedString
     }
