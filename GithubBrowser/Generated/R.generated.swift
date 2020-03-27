@@ -183,48 +183,90 @@ struct R: Rswift.Validatable {
   struct string {
     /// This `R.string.localizable` struct is generated, and contains static references to 20 localization keys.
     struct localizable {
-      /// Value: Check user name
-      static let loginButton = Rswift.StringResource(key: "loginButton", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Company:
-      static let accountInfoCompany = Rswift.StringResource(key: "accountInfoCompany", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Creation date:
-      static let accountInfoCreationDate = Rswift.StringResource(key: "accountInfoCreationDate", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Enter username
-      static let loginPlaceholder = Rswift.StringResource(key: "loginPlaceholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Error
-      static let error = Rswift.StringResource(key: "error", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Followers:
-      static let accountInfoFollowers = Rswift.StringResource(key: "accountInfoFollowers", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Following:
-      static let accountInfoFollowing = Rswift.StringResource(key: "accountInfoFollowing", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Github Browser
-      static let accountInfoTitle = Rswift.StringResource(key: "accountInfoTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Github Browser
-      static let loginTitle = Rswift.StringResource(key: "loginTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Github username:
-      static let loginLabel = Rswift.StringResource(key: "loginLabel", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Location:
-      static let accountInfoLocation = Rswift.StringResource(key: "accountInfoLocation", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Login:
-      static let accountInfoLogin = Rswift.StringResource(key: "accountInfoLogin", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Name:
-      static let accountInfoName = Rswift.StringResource(key: "accountInfoName", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Network error, try again later
-      static let errorNetworkError = Rswift.StringResource(key: "errorNetworkError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Number of public gists:
-      static let accountInfoPublicGists = Rswift.StringResource(key: "accountInfoPublicGists", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Number of public respositories:
-      static let accountInfoPublicRepositories = Rswift.StringResource(key: "accountInfoPublicRepositories", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: OK
-      static let commonButtonOk = Rswift.StringResource(key: "commonButtonOk", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Profile is invalid
-      static let errorInvalidProfile = Rswift.StringResource(key: "errorInvalidProfile", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Update date:
-      static let accountInfoUpdateDate = Rswift.StringResource(key: "accountInfoUpdateDate", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Website:
-      static let accountInfoWebsite = Rswift.StringResource(key: "accountInfoWebsite", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// en translation: Check user name
+      ///
+      /// Locales: en, pl
+      static let loginButton = Rswift.StringResource(key: "loginButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Company:
+      ///
+      /// Locales: en, pl
+      static let accountInfoCompany = Rswift.StringResource(key: "accountInfoCompany", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Creation date:
+      ///
+      /// Locales: en, pl
+      static let accountInfoCreationDate = Rswift.StringResource(key: "accountInfoCreationDate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Enter username
+      ///
+      /// Locales: en, pl
+      static let loginPlaceholder = Rswift.StringResource(key: "loginPlaceholder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Error
+      ///
+      /// Locales: en, pl
+      static let error = Rswift.StringResource(key: "error", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Followers:
+      ///
+      /// Locales: en, pl
+      static let accountInfoFollowers = Rswift.StringResource(key: "accountInfoFollowers", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Following:
+      ///
+      /// Locales: en, pl
+      static let accountInfoFollowing = Rswift.StringResource(key: "accountInfoFollowing", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Github Browser
+      ///
+      /// Locales: en, pl
+      static let accountInfoTitle = Rswift.StringResource(key: "accountInfoTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Github Browser
+      ///
+      /// Locales: en, pl
+      static let loginTitle = Rswift.StringResource(key: "loginTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Github username:
+      ///
+      /// Locales: en, pl
+      static let loginLabel = Rswift.StringResource(key: "loginLabel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Location:
+      ///
+      /// Locales: en, pl
+      static let accountInfoLocation = Rswift.StringResource(key: "accountInfoLocation", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Login:
+      ///
+      /// Locales: en, pl
+      static let accountInfoLogin = Rswift.StringResource(key: "accountInfoLogin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Name:
+      ///
+      /// Locales: en, pl
+      static let accountInfoName = Rswift.StringResource(key: "accountInfoName", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Network error, try again later
+      ///
+      /// Locales: en, pl
+      static let errorNetworkError = Rswift.StringResource(key: "errorNetworkError", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Number of public gists:
+      ///
+      /// Locales: en, pl
+      static let accountInfoPublicGists = Rswift.StringResource(key: "accountInfoPublicGists", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Number of public respositories:
+      ///
+      /// Locales: en, pl
+      static let accountInfoPublicRepositories = Rswift.StringResource(key: "accountInfoPublicRepositories", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: OK
+      ///
+      /// Locales: en, pl
+      static let commonButtonOk = Rswift.StringResource(key: "commonButtonOk", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Profile is invalid
+      ///
+      /// Locales: en, pl
+      static let errorInvalidProfile = Rswift.StringResource(key: "errorInvalidProfile", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Update date:
+      ///
+      /// Locales: en, pl
+      static let accountInfoUpdateDate = Rswift.StringResource(key: "accountInfoUpdateDate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Website:
+      ///
+      /// Locales: en, pl
+      static let accountInfoWebsite = Rswift.StringResource(key: "accountInfoWebsite", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
 
-      /// Value: Check user name
+      /// en translation: Check user name
+      ///
+      /// Locales: en, pl
       static func loginButton(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("loginButton", bundle: hostingBundle, comment: "")
@@ -237,7 +279,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("loginButton", bundle: bundle, comment: "")
       }
 
-      /// Value: Company:
+      /// en translation: Company:
+      ///
+      /// Locales: en, pl
       static func accountInfoCompany(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("accountInfoCompany", bundle: hostingBundle, comment: "")
@@ -250,7 +294,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountInfoCompany", bundle: bundle, comment: "")
       }
 
-      /// Value: Creation date:
+      /// en translation: Creation date:
+      ///
+      /// Locales: en, pl
       static func accountInfoCreationDate(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("accountInfoCreationDate", bundle: hostingBundle, comment: "")
@@ -263,7 +309,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountInfoCreationDate", bundle: bundle, comment: "")
       }
 
-      /// Value: Enter username
+      /// en translation: Enter username
+      ///
+      /// Locales: en, pl
       static func loginPlaceholder(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("loginPlaceholder", bundle: hostingBundle, comment: "")
@@ -276,7 +324,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("loginPlaceholder", bundle: bundle, comment: "")
       }
 
-      /// Value: Error
+      /// en translation: Error
+      ///
+      /// Locales: en, pl
       static func error(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("error", bundle: hostingBundle, comment: "")
@@ -289,7 +339,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("error", bundle: bundle, comment: "")
       }
 
-      /// Value: Followers:
+      /// en translation: Followers:
+      ///
+      /// Locales: en, pl
       static func accountInfoFollowers(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("accountInfoFollowers", bundle: hostingBundle, comment: "")
@@ -302,7 +354,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountInfoFollowers", bundle: bundle, comment: "")
       }
 
-      /// Value: Following:
+      /// en translation: Following:
+      ///
+      /// Locales: en, pl
       static func accountInfoFollowing(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("accountInfoFollowing", bundle: hostingBundle, comment: "")
@@ -315,7 +369,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountInfoFollowing", bundle: bundle, comment: "")
       }
 
-      /// Value: Github Browser
+      /// en translation: Github Browser
+      ///
+      /// Locales: en, pl
       static func accountInfoTitle(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("accountInfoTitle", bundle: hostingBundle, comment: "")
@@ -328,7 +384,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountInfoTitle", bundle: bundle, comment: "")
       }
 
-      /// Value: Github Browser
+      /// en translation: Github Browser
+      ///
+      /// Locales: en, pl
       static func loginTitle(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("loginTitle", bundle: hostingBundle, comment: "")
@@ -341,7 +399,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("loginTitle", bundle: bundle, comment: "")
       }
 
-      /// Value: Github username:
+      /// en translation: Github username:
+      ///
+      /// Locales: en, pl
       static func loginLabel(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("loginLabel", bundle: hostingBundle, comment: "")
@@ -354,7 +414,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("loginLabel", bundle: bundle, comment: "")
       }
 
-      /// Value: Location:
+      /// en translation: Location:
+      ///
+      /// Locales: en, pl
       static func accountInfoLocation(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("accountInfoLocation", bundle: hostingBundle, comment: "")
@@ -367,7 +429,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountInfoLocation", bundle: bundle, comment: "")
       }
 
-      /// Value: Login:
+      /// en translation: Login:
+      ///
+      /// Locales: en, pl
       static func accountInfoLogin(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("accountInfoLogin", bundle: hostingBundle, comment: "")
@@ -380,7 +444,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountInfoLogin", bundle: bundle, comment: "")
       }
 
-      /// Value: Name:
+      /// en translation: Name:
+      ///
+      /// Locales: en, pl
       static func accountInfoName(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("accountInfoName", bundle: hostingBundle, comment: "")
@@ -393,7 +459,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountInfoName", bundle: bundle, comment: "")
       }
 
-      /// Value: Network error, try again later
+      /// en translation: Network error, try again later
+      ///
+      /// Locales: en, pl
       static func errorNetworkError(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("errorNetworkError", bundle: hostingBundle, comment: "")
@@ -406,7 +474,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("errorNetworkError", bundle: bundle, comment: "")
       }
 
-      /// Value: Number of public gists:
+      /// en translation: Number of public gists:
+      ///
+      /// Locales: en, pl
       static func accountInfoPublicGists(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("accountInfoPublicGists", bundle: hostingBundle, comment: "")
@@ -419,7 +489,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountInfoPublicGists", bundle: bundle, comment: "")
       }
 
-      /// Value: Number of public respositories:
+      /// en translation: Number of public respositories:
+      ///
+      /// Locales: en, pl
       static func accountInfoPublicRepositories(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("accountInfoPublicRepositories", bundle: hostingBundle, comment: "")
@@ -432,7 +504,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountInfoPublicRepositories", bundle: bundle, comment: "")
       }
 
-      /// Value: OK
+      /// en translation: OK
+      ///
+      /// Locales: en, pl
       static func commonButtonOk(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("commonButtonOk", bundle: hostingBundle, comment: "")
@@ -445,7 +519,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("commonButtonOk", bundle: bundle, comment: "")
       }
 
-      /// Value: Profile is invalid
+      /// en translation: Profile is invalid
+      ///
+      /// Locales: en, pl
       static func errorInvalidProfile(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("errorInvalidProfile", bundle: hostingBundle, comment: "")
@@ -458,7 +534,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("errorInvalidProfile", bundle: bundle, comment: "")
       }
 
-      /// Value: Update date:
+      /// en translation: Update date:
+      ///
+      /// Locales: en, pl
       static func accountInfoUpdateDate(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("accountInfoUpdateDate", bundle: hostingBundle, comment: "")
@@ -471,7 +549,9 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountInfoUpdateDate", bundle: bundle, comment: "")
       }
 
-      /// Value: Website:
+      /// en translation: Website:
+      ///
+      /// Locales: en, pl
       static func accountInfoWebsite(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("accountInfoWebsite", bundle: hostingBundle, comment: "")
