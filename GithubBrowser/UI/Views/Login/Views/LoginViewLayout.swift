@@ -17,10 +17,17 @@ final class LoginViewLayout {
         case normal
         case invalid
 
-        var mainColor: UIColor {
+        var mainColor: UIColor? {
             switch self {
-            case .normal: return .black
-            case .invalid: return .red
+            case .normal: return Colors.background()
+            case .invalid: return Colors.error()
+            }
+        }
+
+        var baseColor: UIColor? {
+            switch self {
+            case .normal: return Colors.text()
+            case .invalid: return Colors.error()
             }
         }
     }
@@ -51,8 +58,8 @@ final class LoginViewLayout {
     }
 
     func setStyle(style: Style, withError text: String = "") {
-        loginLabel.textColor = style.mainColor
-        loginTextField.layer.borderColor = style.mainColor.cgColor
+        loginLabel.textColor = style.baseColor
+        loginTextField.layer.borderColor = style.baseColor?.cgColor
         errorLabel.text = text
         errorLabel.textColor = style.mainColor
     }
@@ -107,22 +114,24 @@ final class LoginViewLayout {
         itemStackView.addArrangedSubview(loginLabel)
 
         loginLabel.text = L10n.loginLabel()
-
         loginLabel.font = .systemFont(ofSize: 12.0)
     }
 
     private func setupLoginTextField() {
         itemStackView.addArrangedSubview(loginTextField)
 
-        loginTextField.layer.borderColor = UIColor.black.cgColor
         loginTextField.layer.borderWidth = 1.0
         loginTextField.layer.cornerRadius = 4.0
         loginTextField.clipsToBounds = true
         loginTextField.font = .systemFont(ofSize: 20)
         loginTextField.autocapitalizationType = .none
         loginTextField.padding = .init(top: 10, left: 20, bottom: 10, right: 20)
-        loginTextField.placeholder = L10n.loginPlaceholder()
+        loginTextField.attributedPlaceholder = NSAttributedString(
+            string: L10n.loginPlaceholder(),
+            attributes: [NSAttributedString.Key.foregroundColor: Colors.placeholder()!]
+        )
         loginTextField.clearsOnBeginEditing = true
+        loginTextField.textColor = Colors.text()
     }
 
     private func setupErrorLabel() {
@@ -136,7 +145,7 @@ final class LoginViewLayout {
 
         //TODO: change name
         loginButton.setTitle(L10n.loginButton(), for: .normal)
-        loginButton.setTitleColor(.black, for: .normal)
+        loginButton.setTitleColor(Colors.text(), for: .normal)
         loginButton.titleLabel?.font = .systemFont(ofSize: 20.0)
     }
 }

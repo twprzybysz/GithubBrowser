@@ -43,6 +43,7 @@
 		B9E132FD242D64FB008C61BE /* UIView+KeyboardDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132FC242D64FB008C61BE /* UIView+KeyboardDismiss.swift */; };
 		B9E13300242DDC16008C61BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9E132FF242DDC16008C61BE /* Localizable.strings */; };
 		B9E13302242DDC6D008C61BE /* RHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E13301242DDC6D008C61BE /* RHelpers.swift */; };
+		B9E13304242DEA59008C61BE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E13303242DEA59008C61BE /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		B9E132FC242D64FB008C61BE /* UIView+KeyboardDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+KeyboardDismiss.swift"; sourceTree = "<group>"; };
 		B9E132FF242DDC16008C61BE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B9E13301242DDC6D008C61BE /* RHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RHelpers.swift; sourceTree = "<group>"; };
+		B9E13303242DEA59008C61BE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E132A2242CF4BE008C61BE /* Assets.xcassets */,
+				B9E13303242DEA59008C61BE /* Colors.xcassets */,
 				B9E132A4242CF4BE008C61BE /* LaunchScreen.storyboard */,
 				B9E132FF242DDC16008C61BE /* Localizable.strings */,
 			);
@@ -368,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9E132A6242CF4BE008C61BE /* LaunchScreen.storyboard in Resources */,
+				B9E13304242DEA59008C61BE /* Colors.xcassets in Resources */,
 				B9E13300242DDC16008C61BE /* Localizable.strings in Resources */,
 				B9E132A3242CF4BE008C61BE /* Assets.xcassets in Resources */,
 			);
@@ -612,6 +616,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GithubBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,6 +635,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GithubBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

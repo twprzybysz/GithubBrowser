@@ -20,7 +20,7 @@ protocol CoordinatorProtocol: AnyObject {
 class BaseCoordinator: CoordinatorProtocol {
     var navigationController: UINavigationController = {
         let navigationController = UINavigationController()
-        navigationController.navigationBar.tintColor = .black
+        navigationController.navigationBar.tintColor = Colors.text()
 
         return navigationController
     }()

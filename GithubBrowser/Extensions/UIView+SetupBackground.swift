@@ -10,6 +10,6 @@ import UIKit
 
 extension UIView {
     func setupBackground() {
-        backgroundColor = .white
+        backgroundColor = Colors.background()
     }
 }

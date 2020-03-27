@@ -7,3 +7,4 @@
 //
 
 let L10n = R.string.localizable.self
+let Colors = R.color.self
