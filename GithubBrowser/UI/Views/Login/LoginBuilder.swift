@@ -14,7 +14,7 @@ protocol LoginBuilderProtocol {
 
 struct LoginBuilder: LoginBuilderProtocol {
     func buildModule(delegate: LoginPresenterDelegate) -> UIViewController {
-        let presenter = LoginPresenter(networkProvider: AppEnv.container.resolve(NetworkProvider.self)!)
+        let presenter = LoginPresenter(profileService: AppEnv.container.resolve(ProfileService.self)!)
         let view = LoginViewController(presenter: presenter)
 
         presenter.view = view

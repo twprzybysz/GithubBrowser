@@ -16,7 +16,10 @@ extension Container {
     }
 
     private func registerServices() {
-        autoregister(NetworkProvider.self, initializer: NetworkProvider.init)
+        autoregister(StorageProtocol.self, initializer: UserDefaultsStorage.init)
+        autoregister(CacheProtocol.self, initializer: ShortLiveCacheManager.init)
+        autoregister(NetworkProviderProtocol.self, initializer: NetworkProvider.init)
+        autoregister(ProfileService.self, initializer: ProfileService.init)
     }
 
     private func registerCoordinators() {

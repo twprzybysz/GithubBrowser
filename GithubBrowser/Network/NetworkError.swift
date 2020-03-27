@@ -6,6 +6,14 @@
 //  Copyright © 2020 Kodely. All rights reserved.
 //
 
-enum NetworkError: Error {
+import Foundation
+
+enum NetworkError: LocalizedError {
     case error
+
+    var errorDescription: String? {
+        switch self {
+        case .error: return L10n.errorNetworkError()
+        }
+    }
 }

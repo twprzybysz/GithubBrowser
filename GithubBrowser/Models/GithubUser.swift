@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GithubUser: Decodable {
+struct GithubUser: Codable {
     enum CodingKeys: String, CodingKey {
         case login, id
         case nodeID = "node_id"

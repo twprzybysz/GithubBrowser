@@ -20,10 +20,11 @@ final class LoginPresenter {
     weak var delegate: LoginPresenterDelegate?
 
     private var userName = ""
-    private var networkProvider: NetworkProviderProtocol
+    private var profileService: ProfileServiceProtocol
 
-    init(networkProvider: NetworkProviderProtocol) {
-        self.networkProvider = networkProvider
+    init(profileService: ProfileServiceProtocol) {
+        self.profileService = profileService
+        self.profileService.delegate = self
     }
 
     private func fetchData(with username: String) {
@@ -33,23 +34,7 @@ final class LoginPresenter {
         }
 
         view?.showLoader()
-        networkProvider.getUserData(for: username) { [weak self] result in
-            defer { self?.view?.dismissLoader() }
-            guard let self = self else { return }
-
-            switch result {
-            case let .success(githubUser):
-                guard githubUser.isValid else {
-                    self.view?.highlightFieldWithError(text: "User is invalid")
-                    return
-                }
-
-                self.clearUserName()
-                self.delegate?.showAccountInfo(for: githubUser)
-            case let .failure(error):
-                self.view?.presentError(with: "Error", text: error.localizedDescription)
-            }
-        }
+        profileService.getProfile(for: username)
     }
 
     private func clearUserName() {
@@ -65,5 +50,20 @@ extension LoginPresenter: LoginPresenterProtocol {
 
     func loginDidTap() {
         fetchData(with: userName)
+    }
+}
+
+extension LoginPresenter: ProfileServiceDelegate {
+    func profileDidLoad(_ githubUser: GithubUser) {
+        view?.dismissLoader()
+        clearUserName()
+
+        delegate?.showAccountInfo(for: githubUser)
+    }
+
+    func profileDidLoadWithError(_ error: Error) {
+        view?.dismissLoader()
+        
+        view?.presentError(with: "Error", text: error.localizedDescription)
     }
 }

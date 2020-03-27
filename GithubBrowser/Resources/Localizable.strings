@@ -9,6 +9,11 @@
 // Common
 "commonButtonOk" = "OK";
 
+// Errors
+"error" = "Error";
+"errorInvalidProfile" = "Profile is invalid";
+"errorNetworkError" = "Network error, try again later";
+
 // Login
 "loginTitle" = "Github Browser";
 "loginLabel" = "Github username:";

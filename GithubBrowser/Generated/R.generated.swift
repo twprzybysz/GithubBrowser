@@ -181,7 +181,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 17 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 20 localization keys.
     struct localizable {
       /// Value: Check user name
       static let loginButton = Rswift.StringResource(key: "loginButton", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -191,6 +191,8 @@ struct R: Rswift.Validatable {
       static let accountInfoCreationDate = Rswift.StringResource(key: "accountInfoCreationDate", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Enter username
       static let loginPlaceholder = Rswift.StringResource(key: "loginPlaceholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Error
+      static let error = Rswift.StringResource(key: "error", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Followers:
       static let accountInfoFollowers = Rswift.StringResource(key: "accountInfoFollowers", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Following:
@@ -207,12 +209,16 @@ struct R: Rswift.Validatable {
       static let accountInfoLogin = Rswift.StringResource(key: "accountInfoLogin", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Name:
       static let accountInfoName = Rswift.StringResource(key: "accountInfoName", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Network error, try again later
+      static let errorNetworkError = Rswift.StringResource(key: "errorNetworkError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Number of public gists:
       static let accountInfoPublicGists = Rswift.StringResource(key: "accountInfoPublicGists", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Number of public respositories:
       static let accountInfoPublicRepositories = Rswift.StringResource(key: "accountInfoPublicRepositories", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: OK
       static let commonButtonOk = Rswift.StringResource(key: "commonButtonOk", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Profile is invalid
+      static let errorInvalidProfile = Rswift.StringResource(key: "errorInvalidProfile", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Update date:
       static let accountInfoUpdateDate = Rswift.StringResource(key: "accountInfoUpdateDate", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Website:
@@ -268,6 +274,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("loginPlaceholder", bundle: bundle, comment: "")
+      }
+
+      /// Value: Error
+      static func error(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("error", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "error"
+        }
+
+        return NSLocalizedString("error", bundle: bundle, comment: "")
       }
 
       /// Value: Followers:
@@ -374,6 +393,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("accountInfoName", bundle: bundle, comment: "")
       }
 
+      /// Value: Network error, try again later
+      static func errorNetworkError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorNetworkError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorNetworkError"
+        }
+
+        return NSLocalizedString("errorNetworkError", bundle: bundle, comment: "")
+      }
+
       /// Value: Number of public gists:
       static func accountInfoPublicGists(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -411,6 +443,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("commonButtonOk", bundle: bundle, comment: "")
+      }
+
+      /// Value: Profile is invalid
+      static func errorInvalidProfile(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorInvalidProfile", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorInvalidProfile"
+        }
+
+        return NSLocalizedString("errorInvalidProfile", bundle: bundle, comment: "")
       }
 
       /// Value: Update date:
