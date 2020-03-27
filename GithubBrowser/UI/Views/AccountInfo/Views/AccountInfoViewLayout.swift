@@ -28,17 +28,17 @@ final class AccountInfoViewLayout {
     func configureView(for githubUser: GithubUser) {
         accountDataStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
-        insertLabelWith(title: "Login:", text: "\(githubUser.login ?? Constants.empty)")
-        insertLabelWith(title: "Name:", text: "\(githubUser.name ?? Constants.empty)")
-        insertLabelWith(title: "Location:", text: "\(githubUser.location ?? Constants.empty)")
-        insertLabelWith(title: "Website:", text: "\(githubUser.htmlURL ?? Constants.empty)")
-        insertLabelWith(title: "Company:", text: "\(githubUser.company ?? Constants.empty)")
-        insertLabelWith(title: "Followers:",text: "\(githubUser.followers ?? 0)")
-        insertLabelWith(title: "Following:",text: "\(githubUser.following ?? 0)")
-        insertLabelWith(title: "Creation date:", text: "\(DateFormatter.format(date: githubUser.createdAt))")
-        insertLabelWith(title: "Update date:", text: " \(DateFormatter.format(date: githubUser.updatedAt))")
-        insertLabelWith(title: "Number of public gists:",text: "\(githubUser.publicGists ?? 0)")
-        insertLabelWith(title: "Number of public respositories:", text: "\(githubUser.publicRepos ?? 0)")
+        insertLabelWith(title: L10n.accountInfoLogin(), text: "\(githubUser.login ?? Constants.empty)")
+        insertLabelWith(title: L10n.accountInfoName(), text: "\(githubUser.name ?? Constants.empty)")
+        insertLabelWith(title: L10n.accountInfoLocation(), text: "\(githubUser.location ?? Constants.empty)")
+        insertLabelWith(title: L10n.accountInfoWebsite(), text: "\(githubUser.htmlURL ?? Constants.empty)")
+        insertLabelWith(title: L10n.accountInfoCompany(), text: "\(githubUser.company ?? Constants.empty)")
+        insertLabelWith(title: L10n.accountInfoFollowers(), text: "\(githubUser.followers ?? 0)")
+        insertLabelWith(title: L10n.accountInfoFollowing(), text: "\(githubUser.following ?? 0)")
+        insertLabelWith(title: L10n.accountInfoCreationDate(), text: "\(DateFormatter.format(date: githubUser.createdAt))")
+        insertLabelWith(title: L10n.accountInfoUpdateDate(), text: " \(DateFormatter.format(date: githubUser.updatedAt))")
+        insertLabelWith(title: L10n.accountInfoPublicGists(), text: "\(githubUser.publicGists ?? 0)")
+        insertLabelWith(title: L10n.accountInfoPublicRepositories(), text: "\(githubUser.publicRepos ?? 0)")
     }
 
     private func setup() {
@@ -100,7 +100,7 @@ final class AccountInfoViewLayout {
 
         itemLabel.attributedText = attributedString
         itemLabel.numberOfLines = 0
-        itemLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 900), for: .vertical)
+        itemLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
 
         let labelWrapView = UIView()
         labelWrapView.addSubview(itemLabel)

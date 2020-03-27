@@ -41,6 +41,8 @@
 		B9E132F8242D5BF7008C61BE /* DateFormatter+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132F7242D5BF7008C61BE /* DateFormatter+Format.swift */; };
 		B9E132FB242D63B7008C61BE /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132FA242D63B7008C61BE /* KeyboardObserver.swift */; };
 		B9E132FD242D64FB008C61BE /* UIView+KeyboardDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132FC242D64FB008C61BE /* UIView+KeyboardDismiss.swift */; };
+		B9E13300242DDC16008C61BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9E132FF242DDC16008C61BE /* Localizable.strings */; };
+		B9E13302242DDC6D008C61BE /* RHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E13301242DDC6D008C61BE /* RHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		B9E132F7242D5BF7008C61BE /* DateFormatter+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Format.swift"; sourceTree = "<group>"; };
 		B9E132FA242D63B7008C61BE /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		B9E132FC242D64FB008C61BE /* UIView+KeyboardDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+KeyboardDismiss.swift"; sourceTree = "<group>"; };
+		B9E132FF242DDC16008C61BE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		B9E13301242DDC6D008C61BE /* RHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +146,7 @@
 				B9E132BB242CF6F3008C61BE /* Extensions */,
 				B9E132F1242D3DC8008C61BE /* Generated */,
 				B9E132F9242D63AA008C61BE /* Utils */,
-				B9E132A2242CF4BE008C61BE /* Assets.xcassets */,
-				B9E132A4242CF4BE008C61BE /* LaunchScreen.storyboard */,
+				B9E132FE242DDB6C008C61BE /* Resources */,
 				B9E132A7242CF4BE008C61BE /* Info.plist */,
 			);
 			path = GithubBrowser;
@@ -288,8 +291,19 @@
 			isa = PBXGroup;
 			children = (
 				B9E132FA242D63B7008C61BE /* KeyboardObserver.swift */,
+				B9E13301242DDC6D008C61BE /* RHelpers.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B9E132FE242DDB6C008C61BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B9E132A2242CF4BE008C61BE /* Assets.xcassets */,
+				B9E132A4242CF4BE008C61BE /* LaunchScreen.storyboard */,
+				B9E132FF242DDC16008C61BE /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9E132A6242CF4BE008C61BE /* LaunchScreen.storyboard in Resources */,
+				B9E13300242DDC16008C61BE /* Localizable.strings in Resources */,
 				B9E132A3242CF4BE008C61BE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +456,7 @@
 				B9E132FB242D63B7008C61BE /* KeyboardObserver.swift in Sources */,
 				B9E132EA242D344E008C61BE /* String+RemovingWhitespaces.swift in Sources */,
 				B9E132DF242D180E008C61BE /* AccountInfoBuilder.swift in Sources */,
+				B9E13302242DDC6D008C61BE /* RHelpers.swift in Sources */,
 				B9E132E1242D2D17008C61BE /* AccountInfoPresenter.swift in Sources */,
 				B9E132DB242D0C1A008C61BE /* UIViewController+PresentError.swift in Sources */,
 				B9E132C2242CF8E6008C61BE /* AppEnv+SetupDependencies.swift in Sources */,

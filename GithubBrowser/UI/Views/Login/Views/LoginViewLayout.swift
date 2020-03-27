@@ -106,7 +106,8 @@ final class LoginViewLayout {
     private func setupLoginLabel() {
         itemStackView.addArrangedSubview(loginLabel)
 
-        loginLabel.text = "Github username:"
+        loginLabel.text = L10n.loginLabel()
+
         loginLabel.font = .systemFont(ofSize: 12.0)
     }
 
@@ -120,7 +121,7 @@ final class LoginViewLayout {
         loginTextField.font = .systemFont(ofSize: 20)
         loginTextField.autocapitalizationType = .none
         loginTextField.padding = .init(top: 10, left: 20, bottom: 10, right: 20)
-        loginTextField.placeholder = "Enter username"
+        loginTextField.placeholder = L10n.loginPlaceholder()
         loginTextField.clearsOnBeginEditing = true
     }
 
@@ -134,7 +135,7 @@ final class LoginViewLayout {
         itemStackView.addArrangedSubview(loginButton)
 
         //TODO: change name
-        loginButton.setTitle("Check user name", for: .normal)
+        loginButton.setTitle(L10n.loginButton(), for: .normal)
         loginButton.setTitleColor(.black, for: .normal)
         loginButton.titleLabel?.font = .systemFont(ofSize: 20.0)
     }

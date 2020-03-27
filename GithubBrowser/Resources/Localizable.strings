@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  GithubBrowser
+
+  Created by Tomasz Przybysz on 27/03/2020.
+  Copyright © 2020 Kodely. All rights reserved.
+*/
+
+// Common
+"commonButtonOk" = "OK";
+
+// Login
+"loginTitle" = "Github Browser";
+"loginLabel" = "Github username:";
+"loginPlaceholder" = "Enter username";
+"loginButton" = "Check user name";
+
+// AccountInfo
+"accountInfoTitle" = "Github Browser";
+"accountInfoLogin" = "Login:";
+"accountInfoName" = "Name:";
+"accountInfoLocation" = "Location:";
+"accountInfoWebsite" = "Website:";
+"accountInfoCompany" = "Company:";
+"accountInfoFollowers" = "Followers:";
+"accountInfoFollowing" = "Following:";
+"accountInfoCreationDate" = "Creation date:";
+"accountInfoUpdateDate" = "Update date:";
+"accountInfoPublicGists" = "Number of public gists:";
+"accountInfoPublicRepositories" = "Number of public respositories:";

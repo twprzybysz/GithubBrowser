@@ -31,7 +31,7 @@ final class AccountInfoViewController: UIViewController {
         super.viewDidLoad()
 
         layout = AccountInfoViewLayout(view: view)
-        title = "Account info"
+        title = L10n.accountInfoTitle()
 
         presenter.viewDidLoad()
     }

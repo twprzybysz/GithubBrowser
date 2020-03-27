@@ -38,7 +38,7 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         layout = LoginViewLayout(view: view)
-        title = "Github browser"
+        title = L10n.loginTitle()
 
         layout.loginTextField.delegate = self
         layout.loginButton.addTarget(self, action: #selector(didTapLogIn), for: .touchUpInside)
