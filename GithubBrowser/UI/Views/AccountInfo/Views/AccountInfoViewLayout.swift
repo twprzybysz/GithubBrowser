@@ -19,6 +19,7 @@ final class AccountInfoViewLayout {
     let itemStackView = UIStackView()
     let accountImageView = UIImageView(image: R.image.blank())
     let accountDataStackView = UIStackView()
+    let languagesButton = UIButton(type: .system)
 
     init(view: UIView) {
         self.view = view
@@ -30,9 +31,9 @@ final class AccountInfoViewLayout {
 
         #warning("TODO: text should be in prepared in presenter")
         [
-            (title: L10n.accountInfoLogin(), text: "\(githubUser.login ?? Constants.empty)"),
-            (title: L10n.accountInfoName(), text: "\(githubUser.name ?? Constants.empty)"),
-            (title: L10n.accountInfoLocation(), text: "\(githubUser.location ?? Constants.empty)"),
+            (title: L10n.accountInfoLogin(), text: githubUser.login ?? Constants.empty),
+            (title: L10n.accountInfoName(), text: githubUser.name ?? Constants.empty),
+            (title: L10n.accountInfoLocation(), text: githubUser.location ?? Constants.empty),
             (title: L10n.accountInfoWebsite(), text: "\(githubUser.htmlURL ?? Constants.empty)"),
             (title: L10n.accountInfoCompany(), text: "\(githubUser.company ?? Constants.empty)"),
             (title: L10n.accountInfoFollowers(), text: "\(githubUser.followers ?? 0)"),
@@ -54,6 +55,7 @@ final class AccountInfoViewLayout {
         setupItemStackView()
         setupAccountImageView()
         setupAccountDataStackView()
+        setupLanguagesButton()
     }
 
     private func setupScrollView() {
@@ -93,6 +95,26 @@ final class AccountInfoViewLayout {
 
         accountDataStackView.axis = .vertical
         accountDataStackView.spacing = 10.0
+    }
+
+    private func setupLanguagesButton() {
+        let wrapView = UIView()
+        wrapView.addSubview(languagesButton)
+
+        languagesButton.snp.makeConstraints { make in
+            make.edges
+                .equalToSuperview()
+                .inset(UIEdgeInsets(top: 10, left: 30, bottom: 10, right: 30))
+        }
+
+        itemStackView.addArrangedSubview(wrapView)
+
+        languagesButton.setTitle(L10n.accountInfoShowLanguages(), for: .normal)
+        languagesButton.setTitleColor(Colors.text(), for: .normal)
+        languagesButton.titleLabel?.font = .systemFont(ofSize: 16.0)
+        languagesButton.layer.borderColor = Colors.text()?.cgColor
+        languagesButton.layer.borderWidth = 1.0
+        languagesButton.layer.cornerRadius = 4.0
     }
 
     private func wrapWithMarginView(textLabel: UILabel) -> UIView {

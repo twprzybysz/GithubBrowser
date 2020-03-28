@@ -14,23 +14,25 @@ import SnapshotTesting
 final class AccountInfoViewControllerSnapshotSpec: QuickSpec {
     override func spec() {
         var sut: AccountInfoViewController!
+        var presenter: AccountInfoPresenter!
 
         beforeEach {
-            sut = AccountInfoViewController(presenter: AccountInfoPresenterMock())
+            presenter = AccountInfoPresenter(githubUser: GithubUser.sampleUser)
+
+            sut = AccountInfoViewController(presenter: presenter)
+            presenter.view = sut
             sut.viewDidLoad()
-            sut.configureView(for: GithubUser.sampleUser)
         }
 
         snapshotTestCases.forEach { testCase in
             context(testCase.description) {
                 it("looks like as expected") {
-                    expectingSnapshot(matching: sut, as: .image(on: testCase.device))
+                    expectingSnapshot(
+                        matching: sut,
+                        as: .image(on: testCase.device)
+                    )
                 }
             }
         }
     }
-}
-
-private final class AccountInfoPresenterMock: AccountInfoPresenterProtocol {
-    func viewDidLoad() { }
 }

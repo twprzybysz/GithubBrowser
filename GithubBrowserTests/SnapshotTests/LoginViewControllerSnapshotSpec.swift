@@ -14,33 +14,33 @@ import SnapshotTesting
 final class LoginViewControllerSnapshotSpec: QuickSpec {
     override func spec() {
         describe("LoginViewController") {
-            describe("Login window without error") {
-                itBehavesLike(LoginViewControllerSharedSnapshots.self) {
-                    { _ in }
-                }
+            context("Login window without error") {
+                itBehavesLike(LoginViewControllerSharedSnapshots.self) { { _ in } }
             }
 
-            describe("Login window with error") {
-                itBehavesLike(LoginViewControllerSharedSnapshots.self) {
-                    { $0.highlightFieldWithError(text: "Some error") }
-                }
+            context("Login window with error") {
+                itBehavesLike(LoginViewControllerSharedSnapshots.self) { { $0.highlightFieldWithError(text: "Some error") } }
             }
         }
     }
 }
 
-private final class LoginPresenterMock: LoginPresenterProtocol {
-    func didChangeUsername(_ userName: String) { }
+private final class ProfileServiceMock: ProfileServiceProtocol {
+    weak var delegate: ProfileServiceDelegate?
 
-    func loginDidTap() { }
+    func getProfile(for username: String) { }
 }
 
 private class LoginViewControllerSharedSnapshots: Behavior<(LoginViewController) -> ()> {
     override class func spec(_ specContext: @escaping () -> (LoginViewController) -> ()) {
         var sut: LoginViewController!
+        var presenter: LoginPresenter!
 
         beforeEach {
-            sut = LoginViewController(presenter: LoginPresenterMock())
+            presenter = LoginPresenter(profileService: ProfileServiceMock())
+
+            sut = LoginViewController(presenter: presenter)
+            presenter.view = sut
             sut.viewDidLoad()
             specContext()(sut)
         }

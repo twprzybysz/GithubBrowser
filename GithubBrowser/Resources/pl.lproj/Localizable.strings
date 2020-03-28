@@ -8,6 +8,7 @@
 
 // Common
 "commonButtonOk" = "OK";
+"commonBack" = "Wstecz";
 
 // Errors
 "error" = "Błąd";
@@ -34,3 +35,4 @@
 "accountInfoUpdateDate" = "Data aktualizacji:";
 "accountInfoPublicGists" = "Liczba publicznych gistów:";
 "accountInfoPublicRepositories" = "Liczba publicznych repozytoriów:";
+"accountInfoShowLanguages" = "Pokaż używane języki";

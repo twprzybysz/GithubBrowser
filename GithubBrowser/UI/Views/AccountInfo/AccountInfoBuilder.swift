@@ -9,15 +9,16 @@
 import class UIKit.UIViewController
 
 protocol AccountInfoBuilderProtocol {
-    func buildModule(githubUser: GithubUser) -> UIViewController
+    func buildModule(githubUser: GithubUser, delegate: AccountInfoPresenterDelegate) -> UIViewController
 }
 
 struct AccountInfoBuilder: AccountInfoBuilderProtocol {
-    func buildModule(githubUser: GithubUser) -> UIViewController {
+    func buildModule(githubUser: GithubUser, delegate: AccountInfoPresenterDelegate) -> UIViewController {
         let presenter = AccountInfoPresenter(githubUser: githubUser)
         let view = AccountInfoViewController(presenter: presenter)
 
         presenter.view = view
+        presenter.delegate = delegate
 
         return view
     }

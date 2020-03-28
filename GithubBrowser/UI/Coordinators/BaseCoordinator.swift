@@ -17,7 +17,7 @@ protocol CoordinatorProtocol: AnyObject {
     func finish(coordinator: CoordinatorProtocol)
 }
 
-class BaseCoordinator: CoordinatorProtocol {
+class BaseCoordinator: NSObject, CoordinatorProtocol {
     var navigationController: UINavigationController = {
         let navigationController = UINavigationController()
         navigationController.navigationBar.tintColor = Colors.text()
@@ -49,5 +49,15 @@ class BaseCoordinator: CoordinatorProtocol {
         }
 
         childCoordinators.remove(at: index)
+    }
+}
+
+extension BaseCoordinator {
+    // MARK: Routing
+    func showProgrammingLanguages() {
+        let programmingLanguagesCoordinator = AppEnv.container.resolve(ProgrammingLanguagesCoordinator.self)!
+        programmingLanguagesCoordinator.navigationController = navigationController
+    
+        start(coordinator: programmingLanguagesCoordinator)
     }
 }

@@ -27,5 +27,6 @@ extension Container {
         autoregister(AppCoordinator.self, argument: UIWindow.self, initializer: AppCoordinator.init)
         autoregister(LoginCoordinator.self, initializer: LoginCoordinator.init)
         autoregister(AccountInfoCoordinator.self, argument: GithubUser.self, initializer: AccountInfoCoordinator.init)
+        autoregister(ProgrammingLanguagesCoordinator.self, initializer: ProgrammingLanguagesCoordinator.init)
     }
 }

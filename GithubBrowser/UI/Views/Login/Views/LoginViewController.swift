@@ -7,19 +7,15 @@
 //
 
 import UIKit
-import SVProgressHUD
 
-protocol LoginViewProtocol: NSObject {
+protocol LoginViewProtocol: NSObject, LoaderProtocol {
     func presentError(with title: String, text: String)
-    func showLoader()
-    func dismissLoader()
     func restoreFieldStyle()
     func highlightFieldWithError(text: String)
     func clearTextField()
 }
 
 final class LoginViewController: UIViewController {
-
     private let presenter: LoginPresenterProtocol
     private var layout: LoginViewLayout!
     private var keyboardObserver = KeyboardObserver()
@@ -46,6 +42,8 @@ final class LoginViewController: UIViewController {
         keyboardObserver.delegate = self
         keyboardObserver.registerObserver()
 
+        setupLoaderContainer(view)
+
         view.registerKeyboardDimissOnTap()
     }
 
@@ -63,14 +61,6 @@ final class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginViewProtocol {
-    func showLoader() {
-        SVProgressHUD.show()
-    }
-
-    func dismissLoader() {
-        SVProgressHUD.dismiss()
-    }
-
     func restoreFieldStyle() {
         layout.setStyle(style: .normal)
     }

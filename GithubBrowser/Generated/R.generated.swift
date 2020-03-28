@@ -181,8 +181,12 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 21 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 23 localization keys.
     struct localizable {
+      /// en translation: Back
+      ///
+      /// Locales: en, pl
+      static let commonBack = Rswift.StringResource(key: "commonBack", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
       /// en translation: Check user name
       ///
       /// Locales: en, pl
@@ -259,6 +263,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, pl
       static let errorInvalidProfile = Rswift.StringResource(key: "errorInvalidProfile", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Show used languages
+      ///
+      /// Locales: en, pl
+      static let accountInfoShowLanguages = Rswift.StringResource(key: "accountInfoShowLanguages", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
       /// en translation: Update date:
       ///
       /// Locales: en, pl
@@ -267,6 +275,21 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, pl
       static let accountInfoWebsite = Rswift.StringResource(key: "accountInfoWebsite", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+
+      /// en translation: Back
+      ///
+      /// Locales: en, pl
+      static func commonBack(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("commonBack", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "commonBack"
+        }
+
+        return NSLocalizedString("commonBack", bundle: bundle, comment: "")
+      }
 
       /// en translation: Check user name
       ///
@@ -551,6 +574,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("errorInvalidProfile", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Show used languages
+      ///
+      /// Locales: en, pl
+      static func accountInfoShowLanguages(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("accountInfoShowLanguages", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "accountInfoShowLanguages"
+        }
+
+        return NSLocalizedString("accountInfoShowLanguages", bundle: bundle, comment: "")
       }
 
       /// en translation: Update date:
