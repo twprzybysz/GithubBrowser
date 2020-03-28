@@ -6,4 +6,5 @@
 //  Copyright © 2020 Kodely. All rights reserved.
 //
 
-typealias Languages = [String: Int]
+typealias BytesCount = Int
+typealias Languages = [String: BytesCount]

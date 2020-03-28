@@ -26,6 +26,13 @@
 		B91F0F60242FA4E000B75190 /* ProgrammingLanguagesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F5F242FA4E000B75190 /* ProgrammingLanguagesCoordinator.swift */; };
 		B91F0F62242FAAC400B75190 /* ProgrammingLanguagesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F61242FAAC400B75190 /* ProgrammingLanguagesLayout.swift */; };
 		B91F0F64242FC01400B75190 /* LoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F63242FC01400B75190 /* LoaderProtocol.swift */; };
+		B91F0F66242FD1D600B75190 /* ProgrammingLanguagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F65242FD1D500B75190 /* ProgrammingLanguagesCell.swift */; };
+		B91F0F68242FD38400B75190 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F67242FD38400B75190 /* ReusableView.swift */; };
+		B91F0F6A242FD3F500B75190 /* UITableView+RegisterDequeueReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F69242FD3F500B75190 /* UITableView+RegisterDequeueReusable.swift */; };
+		B91F0F6C242FD88500B75190 /* LanguageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F6B242FD88500B75190 /* LanguageData.swift */; };
+		B91F0F6E242FDBF700B75190 /* ProgrammingLanguagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F6D242FDBF700B75190 /* ProgrammingLanguagesService.swift */; };
+		B91F0F70242FF6B300B75190 /* Languages+Join.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F6F242FF6B300B75190 /* Languages+Join.swift */; };
+		B91F0F72242FF7B700B75190 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F71242FF7B700B75190 /* LanguageViewModel.swift */; };
 		B9E1329A242CF4BD008C61BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E13299242CF4BD008C61BE /* AppDelegate.swift */; };
 		B9E132A3242CF4BE008C61BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E132A2242CF4BE008C61BE /* Assets.xcassets */; };
 		B9E132A6242CF4BE008C61BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E132A4242CF4BE008C61BE /* LaunchScreen.storyboard */; };
@@ -102,6 +109,13 @@
 		B91F0F5F242FA4E000B75190 /* ProgrammingLanguagesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingLanguagesCoordinator.swift; sourceTree = "<group>"; };
 		B91F0F61242FAAC400B75190 /* ProgrammingLanguagesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingLanguagesLayout.swift; sourceTree = "<group>"; };
 		B91F0F63242FC01400B75190 /* LoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderProtocol.swift; sourceTree = "<group>"; };
+		B91F0F65242FD1D500B75190 /* ProgrammingLanguagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingLanguagesCell.swift; sourceTree = "<group>"; };
+		B91F0F67242FD38400B75190 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		B91F0F69242FD3F500B75190 /* UITableView+RegisterDequeueReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+RegisterDequeueReusable.swift"; sourceTree = "<group>"; };
+		B91F0F6B242FD88500B75190 /* LanguageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageData.swift; sourceTree = "<group>"; };
+		B91F0F6D242FDBF700B75190 /* ProgrammingLanguagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingLanguagesService.swift; sourceTree = "<group>"; };
+		B91F0F6F242FF6B300B75190 /* Languages+Join.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Languages+Join.swift"; sourceTree = "<group>"; };
+		B91F0F71242FF7B700B75190 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
 		B9E13296242CF4BD008C61BE /* GithubBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E13299242CF4BD008C61BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E132A2242CF4BE008C61BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -221,6 +235,8 @@
 			children = (
 				B91F0F59242F9B5100B75190 /* ProgrammingLanguagesViewController.swift */,
 				B91F0F61242FAAC400B75190 /* ProgrammingLanguagesLayout.swift */,
+				B91F0F65242FD1D500B75190 /* ProgrammingLanguagesCell.swift */,
+				B91F0F71242FF7B700B75190 /* LanguageViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +332,8 @@
 				B9E132F7242D5BF7008C61BE /* DateFormatter+Format.swift */,
 				B9E132FC242D64FB008C61BE /* UIView+KeyboardDismiss.swift */,
 				B91F0F45242EA39F00B75190 /* Date+AddSeconds.swift */,
+				B91F0F69242FD3F500B75190 /* UITableView+RegisterDequeueReusable.swift */,
+				B91F0F6F242FF6B300B75190 /* Languages+Join.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -338,6 +356,7 @@
 				B91F0F3F242E925200B75190 /* ProfileError.swift */,
 				B91F0F43242EA33F00B75190 /* CacheItem.swift */,
 				B91F0F51242F73A800B75190 /* ProfileKey.swift */,
+				B91F0F6B242FD88500B75190 /* LanguageData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -384,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				B91F0F3D242E8DA500B75190 /* ProfileService.swift */,
+				B91F0F6D242FDBF700B75190 /* ProgrammingLanguagesService.swift */,
 				B91F0F41242E9FD100B75190 /* UserDefaultsStorage.swift */,
 				B91F0F47242EA4CF00B75190 /* ShortLiveCacheManager.swift */,
 			);
@@ -413,6 +433,7 @@
 				B9E132FA242D63B7008C61BE /* KeyboardObserver.swift */,
 				B9E13301242DDC6D008C61BE /* RHelpers.swift */,
 				B91F0F39242E856100B75190 /* LabelBuilder.swift */,
+				B91F0F67242FD38400B75190 /* ReusableView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -699,6 +720,7 @@
 				B9E132B8242CF6A8008C61BE /* LoginCoordinator.swift in Sources */,
 				B9E132CD242D01A3008C61BE /* Typealiases.swift in Sources */,
 				B9E132C6242CF96C008C61BE /* LoginBuilder.swift in Sources */,
+				B91F0F6E242FDBF700B75190 /* ProgrammingLanguagesService.swift in Sources */,
 				B9E132C0242CF77E008C61BE /* LoginViewLayout.swift in Sources */,
 				B9E132FD242D64FB008C61BE /* UIView+KeyboardDismiss.swift in Sources */,
 				B91F0F64242FC01400B75190 /* LoaderProtocol.swift in Sources */,
@@ -718,6 +740,8 @@
 				B91F0F44242EA33F00B75190 /* CacheItem.swift in Sources */,
 				B91F0F50242F6EA300B75190 /* GithubService.swift in Sources */,
 				B91F0F42242E9FD100B75190 /* UserDefaultsStorage.swift in Sources */,
+				B91F0F6C242FD88500B75190 /* LanguageData.swift in Sources */,
+				B91F0F70242FF6B300B75190 /* Languages+Join.swift in Sources */,
 				B9E13302242DDC6D008C61BE /* RHelpers.swift in Sources */,
 				B9E132E1242D2D17008C61BE /* AccountInfoPresenter.swift in Sources */,
 				B9E132DB242D0C1A008C61BE /* UIViewController+PresentError.swift in Sources */,
@@ -727,12 +751,16 @@
 				B9E132E4242D2D49008C61BE /* AccountInfoViewController.swift in Sources */,
 				B9E132C4242CF918008C61BE /* LoginPresenter.swift in Sources */,
 				B9E132E6242D2D7C008C61BE /* AccountInfoViewLayout.swift in Sources */,
+				B91F0F68242FD38400B75190 /* ReusableView.swift in Sources */,
 				B91F0F3A242E856100B75190 /* LabelBuilder.swift in Sources */,
 				B91F0F46242EA39F00B75190 /* Date+AddSeconds.swift in Sources */,
+				B91F0F66242FD1D600B75190 /* ProgrammingLanguagesCell.swift in Sources */,
+				B91F0F72242FF7B700B75190 /* LanguageViewModel.swift in Sources */,
 				B9E132B4242CF660008C61BE /* AppCoordinator.swift in Sources */,
 				B9E132F6242D40E3008C61BE /* TextFieldWithPadding.swift in Sources */,
 				B91F0F62242FAAC400B75190 /* ProgrammingLanguagesLayout.swift in Sources */,
 				B9E132BA242CF6D7008C61BE /* AccountInfoCoordinator.swift in Sources */,
+				B91F0F6A242FD3F500B75190 /* UITableView+RegisterDequeueReusable.swift in Sources */,
 				B9E132B2242CF61D008C61BE /* AppEnv.swift in Sources */,
 				B9E132D5242D0A12008C61BE /* NetworkRouter.swift in Sources */,
 				B9E13307242DF7EF008C61BE /* R.generated.swift in Sources */,

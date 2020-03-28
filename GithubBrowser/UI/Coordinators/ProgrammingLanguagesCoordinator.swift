@@ -10,7 +10,15 @@ import UIKit
 
 final class ProgrammingLanguagesCoordinator: BaseCoordinator {
 
-    private lazy var module = AppEnv.builders.programmingLanguages.buildModule(delegate: self)
+    private lazy var module = AppEnv.builders.programmingLanguages.buildModule(
+        repositoriesStringURL: repositoriesStringURL, delegate: self
+    )
+
+    private let repositoriesStringURL: String
+
+    init(repositoriesStringURL: String) {
+        self.repositoriesStringURL = repositoriesStringURL
+    }
 
     override func start() {
         navigationController.present(module, animated: true)

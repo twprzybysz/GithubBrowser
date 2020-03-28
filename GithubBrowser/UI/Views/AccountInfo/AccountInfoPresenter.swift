@@ -9,7 +9,7 @@
 import Foundation
 
 protocol AccountInfoPresenterDelegate: AnyObject {
-    func showProgrammingLanguages()
+    func showProgrammingLanguages(repositoriesStringURL: String)
     func finish()
 }
 
@@ -36,7 +36,7 @@ extension AccountInfoPresenter: AccountInfoPresenterProtocol {
     }
 
     func languagesDidTap() {
-        delegate?.showProgrammingLanguages()
+        delegate?.showProgrammingLanguages(repositoriesStringURL: githubUser.reposURL ?? "")
     }
 
     func didTapBack() {

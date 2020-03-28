@@ -54,8 +54,8 @@ class BaseCoordinator: NSObject, CoordinatorProtocol {
 
 extension BaseCoordinator {
     // MARK: Routing
-    func showProgrammingLanguages() {
-        let programmingLanguagesCoordinator = AppEnv.container.resolve(ProgrammingLanguagesCoordinator.self)!
+    func showProgrammingLanguages(repositoriesStringURL: String) {
+        let programmingLanguagesCoordinator = AppEnv.container.resolve(ProgrammingLanguagesCoordinator.self, argument: repositoriesStringURL)!
         programmingLanguagesCoordinator.navigationController = navigationController
     
         start(coordinator: programmingLanguagesCoordinator)

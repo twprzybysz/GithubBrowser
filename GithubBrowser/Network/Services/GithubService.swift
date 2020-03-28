@@ -10,6 +10,8 @@ import Foundation
 
 protocol GithubServiceProtocol {
     func getUserData(for userName: String, completionHandler: @escaping (Result<GithubUser, NetworkError>) -> Void)
+    func getRepositories(with repositoriesStringUrl: String?, completionHandler: @escaping (Result<[GithubUserRepository], NetworkError>) -> Void)
+    func getLanguages(in repositoryStringUrl: String?, completionHandler: @escaping (Result<Languages, NetworkError>) -> Void)
 }
 
 final class GithubService: GithubServiceProtocol {
@@ -25,14 +27,26 @@ final class GithubService: GithubServiceProtocol {
         }
     }
 
-    func getRepositories(with reposUrl: String?, completionHandler: @escaping (Result<[GithubUserRepository], NetworkError>) -> Void) {
-        guard let reposUrl = URL(string: reposUrl ?? "") else {
+    func getRepositories(with repositoriesStringUrl: String?, completionHandler: @escaping (Result<[GithubUserRepository], NetworkError>) -> Void) {
+        getData(by: repositoriesStringUrl) { result in
+            completionHandler(result)
+        }
+    }
+
+    func getLanguages(in repositoryStringUrl: String?, completionHandler: @escaping (Result<Languages, NetworkError>) -> Void) {
+        getData(by: repositoryStringUrl) { result in
+            completionHandler(result)
+        }
+    }
+
+    private func getData<T: Decodable>(by stringUrl: String?, completionHandler: @escaping (Result<T, NetworkError>) -> Void) {
+        guard let url = URL(string: stringUrl ?? "") else {
             completionHandler(.failure(NetworkError.invalidUrl))
             return
         }
 
-        networkService.makeRequest(NetworkRouter.fetchRepositoryDataAt(reposUrl)) { result in
+        networkService.makeRequest(NetworkRouter.fetchRepositoryDataAt(url)) { result in
             completionHandler(result)
         }
-     }
+    }
 }

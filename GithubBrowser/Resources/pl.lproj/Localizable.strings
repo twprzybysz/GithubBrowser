@@ -9,6 +9,7 @@
 // Common
 "commonButtonOk" = "OK";
 "commonBack" = "Wstecz";
+"commonClose" = "Zamknij";
 
 // Errors
 "error" = "Błąd";

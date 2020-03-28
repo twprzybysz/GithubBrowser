@@ -21,12 +21,14 @@ extension Container {
         autoregister(CacheProtocol.self, initializer: ShortLiveCacheManager.init)
         autoregister(NetworkServiceProtocol.self, initializer: NetworkService.init)
         autoregister(ProfileService.self, initializer: ProfileService.init)
+        autoregister(ProgrammingLanguagesServiceProtocol.self, initializer: ProgrammingLanguagesService.init)
     }
 
     private func registerCoordinators() {
         autoregister(AppCoordinator.self, argument: UIWindow.self, initializer: AppCoordinator.init)
         autoregister(LoginCoordinator.self, initializer: LoginCoordinator.init)
         autoregister(AccountInfoCoordinator.self, argument: GithubUser.self, initializer: AccountInfoCoordinator.init)
-        autoregister(ProgrammingLanguagesCoordinator.self, initializer: ProgrammingLanguagesCoordinator.init)
+        #warning("Get rid of that argument")
+        autoregister(ProgrammingLanguagesCoordinator.self, argument: String.self, initializer: ProgrammingLanguagesCoordinator.init)
     }
 }

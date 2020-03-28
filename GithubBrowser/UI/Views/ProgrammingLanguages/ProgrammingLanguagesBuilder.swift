@@ -9,13 +9,15 @@
 import class UIKit.UIViewController
 
 protocol ProgrammingLanguagesBuilderProtocol {
-    func buildModule(delegate: ProgrammingLanguagesDelegate) -> UIViewController
+    func buildModule(repositoriesStringURL: String, delegate: ProgrammingLanguagesDelegate) -> UIViewController
 }
 
 struct ProgrammingLanguagesBuilder: ProgrammingLanguagesBuilderProtocol {
-    func buildModule(delegate: ProgrammingLanguagesDelegate) -> UIViewController {
-
-        let presenter = ProgrammingLanguagesPresenter()
+    func buildModule(repositoriesStringURL: String, delegate: ProgrammingLanguagesDelegate) -> UIViewController {
+        let presenter = ProgrammingLanguagesPresenter(
+            programmingLanguagesService: AppEnv.container.resolve(ProgrammingLanguagesServiceProtocol.self)!,
+            repositoriesStringURL: repositoriesStringURL
+        )
         let view = ProgrammingLanguagesViewController(presenter: presenter)
 
         presenter.view = view

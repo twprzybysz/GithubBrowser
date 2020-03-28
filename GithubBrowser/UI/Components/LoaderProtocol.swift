@@ -11,6 +11,7 @@ import SVProgressHUD
 protocol LoaderProtocol {
     func showLoader()
     func dismissLoader()
+    func showError(text: String?)
 }
 
 extension LoaderProtocol {
@@ -24,5 +25,9 @@ extension LoaderProtocol {
 
     func dismissLoader() {
         SVProgressHUD.dismiss()
+    }
+
+    func showError(text: String?) {
+        SVProgressHUD.showError(withStatus: text)
     }
 }
