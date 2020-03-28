@@ -31,9 +31,21 @@ final class AccountInfoViewController: UIViewController {
         super.viewDidLoad()
 
         layout = AccountInfoViewLayout(view: view)
+        layout.languagesButton.addTarget(self, action: #selector(didTapLanguages), for: .touchUpInside)
         title = L10n.accountInfoTitle()
 
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(didTapBack))
+        navigationItem.leftBarButtonItem = backButton
+
         presenter.viewDidLoad()
+    }
+
+    @objc private func didTapLanguages() {
+        presenter.languagesDidTap()
+    }
+
+    @objc private func didTapBack() {
+        presenter.didTapBack()
     }
 }
 

@@ -8,10 +8,15 @@
 
 import Foundation
 
-protocol AccountInfoPresenterDelegate: AnyObject { }
+protocol AccountInfoPresenterDelegate: AnyObject {
+    func showProgrammingLanguages()
+    func finish()
+}
 
 protocol AccountInfoPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func languagesDidTap()
+    func didTapBack()
 }
 
 final class AccountInfoPresenter {
@@ -28,5 +33,13 @@ final class AccountInfoPresenter {
 extension AccountInfoPresenter: AccountInfoPresenterProtocol {
     func viewDidLoad() {
         view?.configureView(for: githubUser)
+    }
+
+    func languagesDidTap() {
+        delegate?.showProgrammingLanguages()
+    }
+
+    func didTapBack() {
+        delegate?.finish()
     }
 }
