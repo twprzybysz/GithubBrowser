@@ -1,5 +1,5 @@
 //
-//  NetworkProvider.swift
+//  NetworkService.swift
 //  GithubBrowser
 //
 //  Created by Tomasz Przybysz on 26/03/2020.
@@ -8,16 +8,20 @@
 
 import Alamofire
 
-protocol NetworkProviderProtocol {
-    func getUserData(for userName: String, completionHandler: @escaping (Result<GithubUser, NetworkError>) -> Void)
+protocol NetworkServiceProtocol {
+    func makeRequest<T: Decodable>(
+        _ router: NetworkRouter,
+        completionHandler: @escaping (Result<T, NetworkError>) -> Void
+    )
 }
 
-final class NetworkProvider: NetworkProviderProtocol {
+final class NetworkService: NetworkServiceProtocol {
     private enum Constants {
         static let networkTimeout: TimeInterval = 30.0
     }
 
-    let alamofireSession: Session
+    private let alamofireSession: Session
+    private let decoder = JSONDecoder.withIso8601DateDecoder
 
     init() {
         let configuration = URLSessionConfiguration.default
@@ -27,11 +31,12 @@ final class NetworkProvider: NetworkProviderProtocol {
         alamofireSession = Session(configuration: configuration)
     }
 
-    func getUserData(for userName: String, completionHandler: @escaping (Result<GithubUser, NetworkError>) -> Void) {
-        alamofireSession.request(NetworkRouter.fetchUserData(userName))
-            .responseData { responseData in
+    func makeRequest<T: Decodable>(_ router: NetworkRouter, completionHandler: @escaping (Result<T, NetworkError>) -> Void) {
+        alamofireSession.request(router)
+            .responseData { [weak self] responseData in
+                #warning("TODO: handle other type of errors")
                 guard let data = responseData.data,
-                    let response = try? JSONDecoder.withIso8601DateDecoder.decode(GithubUser.self, from: data) else {
+                    let response = try? self?.decoder.decode(T.self, from: data) else {
                     completionHandler(.failure(NetworkError.error))
                     return
                 }

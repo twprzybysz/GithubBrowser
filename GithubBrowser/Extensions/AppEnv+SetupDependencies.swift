@@ -16,9 +16,10 @@ extension Container {
     }
 
     private func registerServices() {
+        autoregister(GithubServiceProtocol.self, initializer: GithubService.init)
         autoregister(StorageProtocol.self, initializer: UserDefaultsStorage.init)
         autoregister(CacheProtocol.self, initializer: ShortLiveCacheManager.init)
-        autoregister(NetworkProviderProtocol.self, initializer: NetworkProvider.init)
+        autoregister(NetworkServiceProtocol.self, initializer: NetworkService.init)
         autoregister(ProfileService.self, initializer: ProfileService.init)
     }
 

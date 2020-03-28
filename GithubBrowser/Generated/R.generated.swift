@@ -181,7 +181,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 20 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 21 localization keys.
     struct localizable {
       /// en translation: Check user name
       ///
@@ -223,6 +223,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, pl
       static let loginLabel = Rswift.StringResource(key: "loginLabel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
+      /// en translation: Invalid url path
+      ///
+      /// Locales: en, pl
+      static let errorInvalidUrlError = Rswift.StringResource(key: "errorInvalidUrlError", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "pl"], comment: nil)
       /// en translation: Location:
       ///
       /// Locales: en, pl
@@ -412,6 +416,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("loginLabel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Invalid url path
+      ///
+      /// Locales: en, pl
+      static func errorInvalidUrlError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorInvalidUrlError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorInvalidUrlError"
+        }
+
+        return NSLocalizedString("errorInvalidUrlError", bundle: bundle, comment: "")
       }
 
       /// en translation: Location:

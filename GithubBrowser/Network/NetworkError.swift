@@ -10,10 +10,12 @@ import Foundation
 
 enum NetworkError: LocalizedError {
     case error
+    case invalidUrl
 
     var errorDescription: String? {
         switch self {
         case .error: return L10n.errorNetworkError()
+        case .invalidUrl: return L10n.errorInvalidUrlError()
         }
     }
 }

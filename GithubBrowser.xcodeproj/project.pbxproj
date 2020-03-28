@@ -18,6 +18,8 @@
 		B91F0F46242EA39F00B75190 /* Date+AddSeconds.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F45242EA39F00B75190 /* Date+AddSeconds.swift */; };
 		B91F0F48242EA4CF00B75190 /* ShortLiveCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F47242EA4CF00B75190 /* ShortLiveCacheManager.swift */; };
 		B91F0F4A242EAAA100B75190 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B91F0F4C242EAAA100B75190 /* Localizable.strings */; };
+		B91F0F50242F6EA300B75190 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F4F242F6EA300B75190 /* GithubService.swift */; };
+		B91F0F52242F73A800B75190 /* ProfileKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F51242F73A800B75190 /* ProfileKey.swift */; };
 		B9E1329A242CF4BD008C61BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E13299242CF4BD008C61BE /* AppDelegate.swift */; };
 		B9E132A3242CF4BE008C61BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E132A2242CF4BE008C61BE /* Assets.xcassets */; };
 		B9E132A6242CF4BE008C61BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E132A4242CF4BE008C61BE /* LaunchScreen.storyboard */; };
@@ -35,7 +37,7 @@
 		B9E132CB242D0168008C61BE /* GithubUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132CA242D0168008C61BE /* GithubUserRepository.swift */; };
 		B9E132CD242D01A3008C61BE /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132CC242D01A3008C61BE /* Typealiases.swift */; };
 		B9E132CF242D01C8008C61BE /* JSONDecoder+CustomDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132CE242D01C8008C61BE /* JSONDecoder+CustomDecoder.swift */; };
-		B9E132D2242D0946008C61BE /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132D1242D0946008C61BE /* NetworkProvider.swift */; };
+		B9E132D2242D0946008C61BE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132D1242D0946008C61BE /* NetworkService.swift */; };
 		B9E132D5242D0A12008C61BE /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132D4242D0A12008C61BE /* NetworkRouter.swift */; };
 		B9E132D7242D0A68008C61BE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132D6242D0A68008C61BE /* NetworkError.swift */; };
 		B9E132D9242D0AAA008C61BE /* URL+BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E132D8242D0AAA008C61BE /* URL+BaseUrl.swift */; };
@@ -86,6 +88,8 @@
 		B91F0F47242EA4CF00B75190 /* ShortLiveCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortLiveCacheManager.swift; sourceTree = "<group>"; };
 		B91F0F4B242EAAA100B75190 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B91F0F4D242EAAA600B75190 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B91F0F4F242F6EA300B75190 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
+		B91F0F51242F73A800B75190 /* ProfileKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileKey.swift; sourceTree = "<group>"; };
 		B9E13296242CF4BD008C61BE /* GithubBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E13299242CF4BD008C61BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E132A2242CF4BE008C61BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,7 +109,7 @@
 		B9E132CA242D0168008C61BE /* GithubUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserRepository.swift; sourceTree = "<group>"; };
 		B9E132CC242D01A3008C61BE /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		B9E132CE242D01C8008C61BE /* JSONDecoder+CustomDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+CustomDecoder.swift"; sourceTree = "<group>"; };
-		B9E132D1242D0946008C61BE /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		B9E132D1242D0946008C61BE /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B9E132D4242D0A12008C61BE /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		B9E132D6242D0A68008C61BE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		B9E132D8242D0AAA008C61BE /* URL+BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+BaseUrl.swift"; sourceTree = "<group>"; };
@@ -179,6 +183,15 @@
 				B91F0F37242E54A100B75190 /* GithubUser.swift */,
 			);
 			path = TestData;
+			sourceTree = "<group>";
+		};
+		B91F0F4E242F6E9600B75190 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B9E132D1242D0946008C61BE /* NetworkService.swift */,
+				B91F0F4F242F6EA300B75190 /* GithubService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B9E1328D242CF4BD008C61BE = {
@@ -291,6 +304,7 @@
 				B9E132CA242D0168008C61BE /* GithubUserRepository.swift */,
 				B91F0F3F242E925200B75190 /* ProfileError.swift */,
 				B91F0F43242EA33F00B75190 /* CacheItem.swift */,
+				B91F0F51242F73A800B75190 /* ProfileKey.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,7 +312,7 @@
 		B9E132D0242D0798008C61BE /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B9E132D1242D0946008C61BE /* NetworkProvider.swift */,
+				B91F0F4E242F6E9600B75190 /* Services */,
 				B9E132D4242D0A12008C61BE /* NetworkRouter.swift */,
 				B9E132D6242D0A68008C61BE /* NetworkError.swift */,
 			);
@@ -655,15 +669,17 @@
 				B9E132FD242D64FB008C61BE /* UIView+KeyboardDismiss.swift in Sources */,
 				B91F0F3E242E8DA500B75190 /* ProfileService.swift in Sources */,
 				B91F0F48242EA4CF00B75190 /* ShortLiveCacheManager.swift in Sources */,
-				B9E132D2242D0946008C61BE /* NetworkProvider.swift in Sources */,
+				B9E132D2242D0946008C61BE /* NetworkService.swift in Sources */,
 				B9E132CF242D01C8008C61BE /* JSONDecoder+CustomDecoder.swift in Sources */,
 				B9E132C9242D014A008C61BE /* GithubUser.swift in Sources */,
 				B91F0F40242E925200B75190 /* ProfileError.swift in Sources */,
 				B9E132E8242D3277008C61BE /* UIView+SetupBackground.swift in Sources */,
+				B91F0F52242F73A800B75190 /* ProfileKey.swift in Sources */,
 				B9E132FB242D63B7008C61BE /* KeyboardObserver.swift in Sources */,
 				B9E132EA242D344E008C61BE /* String+RemovingWhitespaces.swift in Sources */,
 				B9E132DF242D180E008C61BE /* AccountInfoBuilder.swift in Sources */,
 				B91F0F44242EA33F00B75190 /* CacheItem.swift in Sources */,
+				B91F0F50242F6EA300B75190 /* GithubService.swift in Sources */,
 				B91F0F42242E9FD100B75190 /* UserDefaultsStorage.swift in Sources */,
 				B9E13302242DDC6D008C61BE /* RHelpers.swift in Sources */,
 				B9E132E1242D2D17008C61BE /* AccountInfoPresenter.swift in Sources */,

@@ -24,28 +24,31 @@ final class ProfileService: ProfileServiceProtocol {
 
     weak var delegate: ProfileServiceDelegate?
 
-    private let networkProvider: NetworkProviderProtocol
+    private let githubService: GithubServiceProtocol
     private let cacheManager: CacheProtocol
 
     init(
-        networkProvider: NetworkProviderProtocol,
+        githubService: GithubServiceProtocol,
         cacheManager: CacheProtocol
     ) {
-        self.networkProvider = networkProvider
+        self.githubService = githubService
         self.cacheManager = cacheManager
     }
 
     func getProfile(for username: String) {
-        let profileKey = buildKey(using: username)
-        if let githubUser: GithubUser = cacheManager.loadFromCache(for: profileKey) {
+        let profileKey = ProfileKey(username: username)
+        if let githubUser: GithubUser = cacheManager.loadFromCache(for: profileKey.value) {
             delegate?.profileDidLoad(githubUser)
             print("⚠️ Loaded from cache")
             return
         }
 
         print("⚠️ Loading from network")
+        fetchUserData(for: username, profileKey: profileKey)
+    }
 
-        networkProvider.getUserData(for: username) { [weak self] result in
+    private func fetchUserData(for username: String, profileKey: ProfileKeyProtocol) {
+        githubService.getUserData(for: username) { [weak self] result in
             guard let self = self else { return }
 
             switch result {
@@ -56,19 +59,15 @@ final class ProfileService: ProfileServiceProtocol {
                 }
 
                 self.cacheManager.saveToCache(
-                    key: profileKey,
+                    key: profileKey.value,
                     secondsToLive: Constants.maximumSecondsToLive,
                     githubUser
                 )
-                
+
                 self.delegate?.profileDidLoad(githubUser)
             case let .failure(error):
                 self.delegate?.profileDidLoadWithError(error)
             }
         }
-    }
-
-    private func buildKey(using username: String) -> String {
-        return "github-\(username)"
     }
 }
