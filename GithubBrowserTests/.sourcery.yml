@@ -1,0 +1,6 @@
+sources:
+  - ../GithubBrowser
+templates:
+  - Generated
+output:
+  Generated

@@ -35,3 +35,4 @@ opt_in_rules:
 excluded:
   - Pods
   - GithubBrowser/Generated
+  - GithubBrowserTests/Generated

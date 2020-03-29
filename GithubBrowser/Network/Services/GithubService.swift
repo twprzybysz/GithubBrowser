@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol GithubServiceProtocol {
+protocol GithubServiceProtocol: AutoMockable {
     func getUserData(for userName: String, completionHandler: @escaping (Result<GithubUser, NetworkError>) -> Void)
     func getRepositories(with repositoriesStringUrl: String?, completionHandler: @escaping (Result<[GithubUserRepository], NetworkError>) -> Void)
     func getLanguages(in repositoryStringUrl: String?, completionHandler: @escaping (Result<Languages, NetworkError>) -> Void)

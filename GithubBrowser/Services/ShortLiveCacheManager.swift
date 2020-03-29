@@ -6,6 +6,8 @@
 //  Copyright © 2020 Kodely. All rights reserved.
 //
 
+// Cannot apply generics for AutoMockable
+// See issue here: https://github.com/krzysztofzablocki/Sourcery/issues/811
 protocol CacheProtocol {
     func loadFromCache<T: Codable>(for key: String) -> T?
     func saveToCache<T: Codable>(key: String, secondsToLive: Int, _ object: T)

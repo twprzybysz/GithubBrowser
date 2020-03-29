@@ -6,12 +6,12 @@
 //  Copyright © 2020 Kodely. All rights reserved.
 //
 
-protocol ProfileServiceDelegate: AnyObject {
+protocol ProfileServiceDelegate: AnyObject, AutoMockable {
     func profileDidLoad(_ githubUser: GithubUser)
     func profileDidLoadWithError(_ error: Error)
 }
 
-protocol ProfileServiceProtocol {
+protocol ProfileServiceProtocol: AutoMockable {
     var delegate: ProfileServiceDelegate? { get set }
     
     func getProfile(for username: String)

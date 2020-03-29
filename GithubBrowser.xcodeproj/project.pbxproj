@@ -33,6 +33,11 @@
 		B91F0F6E242FDBF700B75190 /* ProgrammingLanguagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F6D242FDBF700B75190 /* ProgrammingLanguagesService.swift */; };
 		B91F0F70242FF6B300B75190 /* Languages+Join.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F6F242FF6B300B75190 /* Languages+Join.swift */; };
 		B91F0F72242FF7B700B75190 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F71242FF7B700B75190 /* LanguageViewModel.swift */; };
+		B91F0F74243117F800B75190 /* AutoMockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F73243117F800B75190 /* AutoMockable.swift */; };
+		B91F0F782431191F00B75190 /* AutoMockable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = B91F0F772431191F00B75190 /* AutoMockable.stencil */; };
+		B91F0F7A2431196000B75190 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F792431196000B75190 /* AutoMockable.generated.swift */; };
+		B91F0F7D24311B8C00B75190 /* ProfileServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F7C24311B8C00B75190 /* ProfileServiceSpec.swift */; };
+		B91F0F8024311C7800B75190 /* CacheProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F7F24311C7800B75190 /* CacheProtocolMock.swift */; };
 		B9E1329A242CF4BD008C61BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E13299242CF4BD008C61BE /* AppDelegate.swift */; };
 		B9E132A3242CF4BE008C61BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E132A2242CF4BE008C61BE /* Assets.xcassets */; };
 		B9E132A6242CF4BE008C61BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E132A4242CF4BE008C61BE /* LaunchScreen.storyboard */; };
@@ -116,6 +121,11 @@
 		B91F0F6D242FDBF700B75190 /* ProgrammingLanguagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingLanguagesService.swift; sourceTree = "<group>"; };
 		B91F0F6F242FF6B300B75190 /* Languages+Join.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Languages+Join.swift"; sourceTree = "<group>"; };
 		B91F0F71242FF7B700B75190 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
+		B91F0F73243117F800B75190 /* AutoMockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.swift; sourceTree = "<group>"; };
+		B91F0F772431191F00B75190 /* AutoMockable.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoMockable.stencil; sourceTree = "<group>"; };
+		B91F0F792431196000B75190 /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
+		B91F0F7C24311B8C00B75190 /* ProfileServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServiceSpec.swift; sourceTree = "<group>"; };
+		B91F0F7F24311C7800B75190 /* CacheProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheProtocolMock.swift; sourceTree = "<group>"; };
 		B9E13296242CF4BD008C61BE /* GithubBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E13299242CF4BD008C61BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E132A2242CF4BE008C61BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -239,6 +249,31 @@
 				B91F0F71242FF7B700B75190 /* LanguageViewModel.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B91F0F762431188100B75190 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				B91F0F792431196000B75190 /* AutoMockable.generated.swift */,
+				B91F0F772431191F00B75190 /* AutoMockable.stencil */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		B91F0F7B24311B2B00B75190 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B91F0F7C24311B8C00B75190 /* ProfileServiceSpec.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B91F0F7E24311C2500B75190 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B91F0F7F24311C7800B75190 /* CacheProtocolMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		B9E1328D242CF4BD008C61BE = {
@@ -434,6 +469,7 @@
 				B9E13301242DDC6D008C61BE /* RHelpers.swift */,
 				B91F0F39242E856100B75190 /* LabelBuilder.swift */,
 				B91F0F67242FD38400B75190 /* ReusableView.swift */,
+				B91F0F73243117F800B75190 /* AutoMockable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -452,7 +488,10 @@
 		B9E1330F242DFBC9008C61BE /* GithubBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
+				B91F0F762431188100B75190 /* Generated */,
+				B91F0F7E24311C2500B75190 /* Mocks */,
 				B9E13318242DFCAD008C61BE /* SnapshotTests */,
+				B91F0F7B24311B2B00B75190 /* Services */,
 				B9E1331E242DFF33008C61BE /* Helpers */,
 				B9E1331B242DFD86008C61BE /* Extensions */,
 				B91F0F36242E549400B75190 /* TestData */,
@@ -515,6 +554,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9E13315242DFBC9008C61BE /* Build configuration list for PBXNativeTarget "GithubBrowserTests" */;
 			buildPhases = (
+				B91F0F752431183F00B75190 /* ShellScript */,
 				9798B86C66EA0C70822F138F /* [CP] Check Pods Manifest.lock */,
 				B9E1330A242DFBC9008C61BE /* Sources */,
 				B9E1330B242DFBC9008C61BE /* Frameworks */,
@@ -586,6 +626,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B91F0F782431191F00B75190 /* AutoMockable.stencil in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +693,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B91F0F752431183F00B75190 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Sourcery/bin/sourcery\" --config \"${PODS_PODFILE_DIR_PATH}/GithubBrowserTests/.sourcery.yml\"\n\n";
 		};
 		B92BF028AAF3A3856A39FA3B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -748,6 +806,7 @@
 				B9E132C2242CF8E6008C61BE /* AppEnv+SetupDependencies.swift in Sources */,
 				B91F0F60242FA4E000B75190 /* ProgrammingLanguagesCoordinator.swift in Sources */,
 				B9E132B6242CF681008C61BE /* BaseCoordinator.swift in Sources */,
+				B91F0F74243117F800B75190 /* AutoMockable.swift in Sources */,
 				B9E132E4242D2D49008C61BE /* AccountInfoViewController.swift in Sources */,
 				B9E132C4242CF918008C61BE /* LoginPresenter.swift in Sources */,
 				B9E132E6242D2D7C008C61BE /* AccountInfoViewLayout.swift in Sources */,
@@ -776,7 +835,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B91F0F7D24311B8C00B75190 /* ProfileServiceSpec.swift in Sources */,
+				B91F0F8024311C7800B75190 /* CacheProtocolMock.swift in Sources */,
 				B9E13320242DFF52008C61BE /* SnapshotTestCases.swift in Sources */,
+				B91F0F7A2431196000B75190 /* AutoMockable.generated.swift in Sources */,
 				B91F0F38242E54A100B75190 /* GithubUser.swift in Sources */,
 				B9E13322242E06A6008C61BE /* CorrectSnapshottingDeviceSpec.swift in Sources */,
 				B91F0F35242E4CDB00B75190 /* AccountInfoViewControllerSnapshotSpec.swift in Sources */,
