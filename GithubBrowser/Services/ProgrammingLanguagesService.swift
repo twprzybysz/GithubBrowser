@@ -23,9 +23,11 @@ final class ProgrammingLanguagesService: ProgrammingLanguagesServiceProtocol {
     weak var delegate: ProgrammingLanguagesServiceDelegate?
 
     private let githubService: GithubServiceProtocol
+    private let dispatchMainQueue: DispatchQueueProtocol
 
-    init(githubService: GithubServiceProtocol) {
+    init(githubService: GithubServiceProtocol, dispatchMainQueue: DispatchQueueProtocol) {
         self.githubService = githubService
+        self.dispatchMainQueue = dispatchMainQueue
     }
 
     func getLanguageData(for repositoriesUrlString: String) {
@@ -48,16 +50,18 @@ final class ProgrammingLanguagesService: ProgrammingLanguagesServiceProtocol {
 
         repositories.forEach { repository in
             languagesGroup.enter()
-            githubService.getLanguages(in: repository.languagesUrl) { result in
-                switch result {
-                case .success(let languages):
-                    languagesQueue.async(flags: .barrier) {
-                        languagesDictionary.joinLanguagesDictionary(languages)
+            githubService.getLanguages(in: repository.languagesUrl) { [weak self] result in
+                self?.dispatchMainQueue.async {
+                    switch result {
+                    case .success(let languages):
+                        languagesQueue.async(flags: .barrier) {
+                            languagesDictionary.joinLanguagesDictionary(languages)
+                            languagesGroup.leave()
+                        }
+                    case .failure:
+                        // error when fail
                         languagesGroup.leave()
                     }
-                case .failure:
-                    // error when fail
-                    languagesGroup.leave()
                 }
             }
         }

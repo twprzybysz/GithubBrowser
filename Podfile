@@ -12,7 +12,6 @@ def libraries
   pod 'SnapKit', '~> 5.0'
   pod 'Swinject'
   pod 'SwinjectAutoregistration'
-  pod 'Alamofire'
   pod 'Kingfisher'
   pod 'SVProgressHUD'
   pod 'R.swift', '~> 5.0'

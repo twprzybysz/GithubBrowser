@@ -38,6 +38,8 @@
 		B91F0F7A2431196000B75190 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F792431196000B75190 /* AutoMockable.generated.swift */; };
 		B91F0F7D24311B8C00B75190 /* ProfileServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F7C24311B8C00B75190 /* ProfileServiceSpec.swift */; };
 		B91F0F8024311C7800B75190 /* CacheProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F0F7F24311C7800B75190 /* CacheProtocolMock.swift */; };
+		B9473DFD2437AB34004BC479 /* DispatchQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9473DFC2437AB34004BC479 /* DispatchQueueProtocol.swift */; };
+		B9473DFF2437AF44004BC479 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9473DFE2437AF44004BC479 /* HTTPMethod.swift */; };
 		B9E1329A242CF4BD008C61BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E13299242CF4BD008C61BE /* AppDelegate.swift */; };
 		B9E132A3242CF4BE008C61BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E132A2242CF4BE008C61BE /* Assets.xcassets */; };
 		B9E132A6242CF4BE008C61BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E132A4242CF4BE008C61BE /* LaunchScreen.storyboard */; };
@@ -126,6 +128,8 @@
 		B91F0F792431196000B75190 /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
 		B91F0F7C24311B8C00B75190 /* ProfileServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServiceSpec.swift; sourceTree = "<group>"; };
 		B91F0F7F24311C7800B75190 /* CacheProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheProtocolMock.swift; sourceTree = "<group>"; };
+		B9473DFC2437AB34004BC479 /* DispatchQueueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueProtocol.swift; sourceTree = "<group>"; };
+		B9473DFE2437AF44004BC479 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		B9E13296242CF4BD008C61BE /* GithubBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E13299242CF4BD008C61BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E132A2242CF4BE008C61BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -402,6 +406,7 @@
 				B91F0F4E242F6E9600B75190 /* Services */,
 				B9E132D4242D0A12008C61BE /* NetworkRouter.swift */,
 				B9E132D6242D0A68008C61BE /* NetworkError.swift */,
+				B9473DFE2437AF44004BC479 /* HTTPMethod.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -470,6 +475,7 @@
 				B91F0F39242E856100B75190 /* LabelBuilder.swift */,
 				B91F0F67242FD38400B75190 /* ReusableView.swift */,
 				B91F0F73243117F800B75190 /* AutoMockable.swift */,
+				B9473DFC2437AB34004BC479 /* DispatchQueueProtocol.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -554,8 +560,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9E13315242DFBC9008C61BE /* Build configuration list for PBXNativeTarget "GithubBrowserTests" */;
 			buildPhases = (
-				B91F0F752431183F00B75190 /* ShellScript */,
 				9798B86C66EA0C70822F138F /* [CP] Check Pods Manifest.lock */,
+				B91F0F752431183F00B75190 /* ShellScript */,
 				B9E1330A242DFBC9008C61BE /* Sources */,
 				B9E1330B242DFBC9008C61BE /* Frameworks */,
 				B9E1330C242DFBC9008C61BE /* Resources */,
@@ -802,6 +808,7 @@
 				B91F0F70242FF6B300B75190 /* Languages+Join.swift in Sources */,
 				B9E13302242DDC6D008C61BE /* RHelpers.swift in Sources */,
 				B9E132E1242D2D17008C61BE /* AccountInfoPresenter.swift in Sources */,
+				B9473DFD2437AB34004BC479 /* DispatchQueueProtocol.swift in Sources */,
 				B9E132DB242D0C1A008C61BE /* UIViewController+PresentError.swift in Sources */,
 				B9E132C2242CF8E6008C61BE /* AppEnv+SetupDependencies.swift in Sources */,
 				B91F0F60242FA4E000B75190 /* ProgrammingLanguagesCoordinator.swift in Sources */,
@@ -810,6 +817,7 @@
 				B9E132E4242D2D49008C61BE /* AccountInfoViewController.swift in Sources */,
 				B9E132C4242CF918008C61BE /* LoginPresenter.swift in Sources */,
 				B9E132E6242D2D7C008C61BE /* AccountInfoViewLayout.swift in Sources */,
+				B9473DFF2437AF44004BC479 /* HTTPMethod.swift in Sources */,
 				B91F0F68242FD38400B75190 /* ReusableView.swift in Sources */,
 				B91F0F3A242E856100B75190 /* LabelBuilder.swift in Sources */,
 				B91F0F46242EA39F00B75190 /* Date+AddSeconds.swift in Sources */,

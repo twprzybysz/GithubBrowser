@@ -6,7 +6,7 @@
 //  Copyright © 2020 Kodely. All rights reserved.
 //
 
-import Alamofire
+import Foundation
 
 protocol NetworkServiceProtocol {
     func makeRequest<T: Decodable>(
@@ -20,28 +20,29 @@ final class NetworkService: NetworkServiceProtocol {
         static let networkTimeout: TimeInterval = 30.0
     }
 
-    private let alamofireSession: Session
-    private let decoder = JSONDecoder.withIso8601DateDecoder
+    private var session: URLSession
 
     init() {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForResource = Constants.networkTimeout
         configuration.timeoutIntervalForRequest = Constants.networkTimeout
 
-        alamofireSession = Session(configuration: configuration)
+        session = URLSession(configuration: configuration)
     }
 
     func makeRequest<T: Decodable>(_ router: NetworkRouter, completionHandler: @escaping (Result<T, NetworkError>) -> Void) {
-        alamofireSession.request(router)
-            .responseData { [weak self] responseData in
-                #warning("TODO: handle other type of errors")
-                guard let data = responseData.data,
-                    let response = try? self?.decoder.decode(T.self, from: data) else {
-                    completionHandler(.failure(NetworkError.error))
-                    return
-                }
-
-                completionHandler(.success(response))
+        let task = session.dataTask(with: router.asURLRequest()) { data, response, error in
+            #warning("TODO: handle other type of errors")
+            guard error == nil,
+                let data = data,
+                let response = try? JSONDecoder.withIso8601DateDecoder.decode(T.self, from: data) else {
+                completionHandler(.failure(NetworkError.error))
+                return
             }
+
+            completionHandler(.success(response))
+        }
+
+        task.resume()
     }
 }

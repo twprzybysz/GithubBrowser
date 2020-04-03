@@ -6,9 +6,25 @@
 //  Copyright © 2020 Kodely. All rights reserved.
 //
 
-import Alamofire
+import Foundation
 
-enum NetworkRouter: URLRequestConvertible {
+protocol RouterProtocol {
+    var method: HTTPMethod { get }
+    var urlPath: URL { get }
+
+    func asURLRequest() -> URLRequest
+}
+
+extension RouterProtocol {
+    func asURLRequest() -> URLRequest {
+        var urlRequest = URLRequest(url: urlPath)
+        urlRequest.httpMethod = method.rawValue
+
+        return urlRequest
+    }
+}
+
+enum NetworkRouter: RouterProtocol {
     case fetchUserData(String)
     case fetchRepositoryDataAt(URL)
 
@@ -25,16 +41,6 @@ enum NetworkRouter: URLRequestConvertible {
             return URL.buildUrl(with: userName)!
         case .fetchRepositoryDataAt(let url):
             return url
-        }
-    }
-
-    func asURLRequest() throws -> URLRequest {
-        var urlRequest = URLRequest(url: urlPath)
-        urlRequest.httpMethod = method.rawValue
-
-        switch self {
-        case .fetchUserData, .fetchRepositoryDataAt:
-            return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
         }
     }
 }

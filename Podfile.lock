@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (5.0.2)
   - Keys (1.0.1)
   - Kingfisher (5.13.2):
     - Kingfisher/Core (= 5.13.2)
@@ -19,7 +18,6 @@ PODS:
     - Swinject (~> 2.7)
 
 DEPENDENCIES:
-  - Alamofire
   - Keys (from `Pods/CocoaPodsKeys`)
   - Kingfisher
   - Nimble (~> 8.0)
@@ -35,7 +33,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - Kingfisher
     - Nimble
     - Quick
@@ -54,7 +51,6 @@ EXTERNAL SOURCES:
     :path: Pods/CocoaPodsKeys
 
 SPEC CHECKSUMS:
-  Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
   Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
@@ -69,6 +65,6 @@ SPEC CHECKSUMS:
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectAutoregistration: 330f5012642a8b5c89a8a4adb0c5e52df07382c0
 
-PODFILE CHECKSUM: c3731d5b8b103c96a4617c6e7b9f088388b48bdb
+PODFILE CHECKSUM: 6ed907ab5327227caa8556a2494b80b1d06cae9e
 
 COCOAPODS: 1.8.4

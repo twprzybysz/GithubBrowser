@@ -24,6 +24,6 @@ extension URL {
 
         let urlString = "\(Constants.baseUrl)\(username)?\(parameters)"
 
-        return try? urlString.asURL()
+        return URL(string: urlString)
     }
 }

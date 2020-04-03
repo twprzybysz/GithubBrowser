@@ -16,6 +16,8 @@ extension Container {
     }
 
     private func registerServices() {
+        register(DispatchQueueProtocol.self) { _ in DispatchQueue.main }
+    
         autoregister(GithubServiceProtocol.self, initializer: GithubService.init)
         autoregister(StorageProtocol.self, initializer: UserDefaultsStorage.init)
         autoregister(CacheProtocol.self, initializer: ShortLiveCacheManager.init)

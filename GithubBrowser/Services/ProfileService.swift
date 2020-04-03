@@ -26,13 +26,16 @@ final class ProfileService: ProfileServiceProtocol {
 
     private let githubService: GithubServiceProtocol
     private let cacheManager: CacheProtocol
+    private let dispatchMainQueue: DispatchQueueProtocol
 
     init(
         githubService: GithubServiceProtocol,
-        cacheManager: CacheProtocol
+        cacheManager: CacheProtocol,
+        dispatchMainQueue: DispatchQueueProtocol
     ) {
         self.githubService = githubService
         self.cacheManager = cacheManager
+        self.dispatchMainQueue = dispatchMainQueue
     }
 
     func getProfile(for username: String) {
@@ -51,22 +54,24 @@ final class ProfileService: ProfileServiceProtocol {
         githubService.getUserData(for: username) { [weak self] result in
             guard let self = self else { return }
 
-            switch result {
-            case let .success(githubUser):
-                guard githubUser.isValid else {
-                    self.delegate?.profileDidLoadWithError(ProfileError.invalidProfile)
-                    return
+            self.dispatchMainQueue.async {
+                switch result {
+                case let .success(githubUser):
+                    guard githubUser.isValid else {
+                        self.delegate?.profileDidLoadWithError(ProfileError.invalidProfile)
+                        return
+                    }
+
+                    self.cacheManager.saveToCache(
+                        key: profileKey.value,
+                        secondsToLive: Constants.maximumSecondsToLive,
+                        githubUser
+                    )
+
+                    self.delegate?.profileDidLoad(githubUser)
+                case let .failure(error):
+                    self.delegate?.profileDidLoadWithError(error)
                 }
-
-                self.cacheManager.saveToCache(
-                    key: profileKey.value,
-                    secondsToLive: Constants.maximumSecondsToLive,
-                    githubUser
-                )
-
-                self.delegate?.profileDidLoad(githubUser)
-            case let .failure(error):
-                self.delegate?.profileDidLoadWithError(error)
             }
         }
     }
