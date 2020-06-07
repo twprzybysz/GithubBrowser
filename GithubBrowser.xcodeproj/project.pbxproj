@@ -173,6 +173,7 @@
 		B9E1331C242DFE53008C61BE /* Quick+ExpectingSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quick+ExpectingSnapshot.swift"; sourceTree = "<group>"; };
 		B9E1331F242DFF52008C61BE /* SnapshotTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTestCases.swift; sourceTree = "<group>"; };
 		B9E13321242E06A6008C61BE /* CorrectSnapshottingDeviceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectSnapshottingDeviceSpec.swift; sourceTree = "<group>"; };
+		B9E5EC45248D631800449BF4 /* GithubBrowser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubBrowser.entitlements; sourceTree = "<group>"; };
 		DAE6F211B043AC644431BD45 /* Pods-GithubBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubBrowserTests.debug.xcconfig"; path = "Target Support Files/Pods-GithubBrowserTests/Pods-GithubBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4EAC21BCA1C2BB0C8DF5F3C /* Pods-GithubBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubBrowserTests.release.xcconfig"; path = "Target Support Files/Pods-GithubBrowserTests/Pods-GithubBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -303,6 +304,7 @@
 		B9E13298242CF4BD008C61BE /* GithubBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				B9E5EC45248D631800449BF4 /* GithubBrowser.entitlements */,
 				B9E132AD242CF5D9008C61BE /* Application */,
 				B9E132C7242D0130008C61BE /* Models */,
 				B9E132D0242D0798008C61BE /* Network */,
@@ -1007,7 +1009,10 @@
 			baseConfigurationReference = 3ED06968FFABBA37C6D813E8 /* Pods-GithubBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GithubBrowser/GithubBrowser.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = WQL225A62Q;
 				INFOPLIST_FILE = GithubBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1016,6 +1021,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kodely.GithubBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1026,7 +1032,10 @@
 			baseConfigurationReference = 3AD30D68D21EB4C4101D193F /* Pods-GithubBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GithubBrowser/GithubBrowser.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = WQL225A62Q;
 				INFOPLIST_FILE = GithubBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1035,6 +1044,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kodely.GithubBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
